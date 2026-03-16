@@ -52,19 +52,33 @@
 
 \subsection{order\_channel}
 \subsubsection{description}
-we use this feature to check how customers were placing orders. Available
-options were Mobile App, Drive-Thru, In-Store Cashier, Kiosk.
+This feature lists which method of ordering was used by the customer while
+placing order. Available options were Mobile App, Drive-Thru, In-Store Cashier,
+Kiosk.
 \subsubsection{graph representation}
 %import of the pie chart
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
 \end{figure}
-
+\subsubsection{use-case}
+We will use this feature to check how customers were placing orders.
 
 %total spent
+\subsection{total\_spend}
+\subsubsection{description}
+\noindent This feature shows the total cost of the transaction in USD\@.
+\subsubsection{graph representation}
+%import of the histogram
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
+\end{figure}
 
-%num customizations
+\subsubsection{use-case}
+\noindent We will use this data and compare it to the order\_channel to check if there exists a relation between the method of ordering and the amount spent.
+
+%num customizations - Zuzia robi
 
 %customer age group
 
