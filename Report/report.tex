@@ -4,21 +4,30 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+
 \begin{document}
 
 \begin{titlepage}
     \centering
     \vspace*{1in}
-    
+
     % --- Title Section ---
     \huge
     \textbf{Starbucks Customer Ordering Patterns} \\
     \vspace{0.5in}
-    
+
     \large
-    tutaj co bedziemy analizowac\\
+    \textbf{Analysis of the "Digital Venti Effect"} \\
     \vspace{1.5in}
-    
+
     % --- Author Section ---
     \textbf{Prepared by:} \\
     \vspace{0.2in}
@@ -26,11 +35,36 @@
     Mateusz Pyrek \\
     Adam Dyrda \\
     Oliwier Jędrzejczyk \\
-    
+    {
+    "scripts": {
+    "prettier": "prettier"
+    }
+    }
     \vfill
-    
+
     % --- Footer Section ---
-    
+
 \end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{General description of the dataset}
+\noindent The subject of the project is a statistical analysis of the "Starbucks Customer Ordering Patterns" dataset. This dataset tracks customer behavior, focusing on how orders are placed, the financial value of those orders, and the time required for fulfillment. To ensure the methods are adjusted to the dataset, five key features have been isolated to analyze trends in spending, demographic preferences, and operational efficiency.
+\section{Summary of attributes}
+\section{Expected relationships between the attributes}
+\section{Theoretical aspects and understanding of the methods}
+\section{Proposal of analyses to be conducted}
+\section{Attributes visualisation}
+\section{Calculation of descriptive statistics}
+\section{Interval estimation}
+\section{Testing of the hypothesis about the normality of distributions}
+\section{Non-parametric estimation}
+\section{Comparison of attribute statistics for different classes}
+\section{Assesment of dependency between chosen attributes}
+\section{Determination of coefficients of linear regression}
+\section{Evaluation of the accuracy of regression}
+\section{Stating and verifying proper statistical hypotheses}
+\section{Results and conclusions}
 
 \end{document}
