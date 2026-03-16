@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc} 
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
-
+\usepackage{float}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -25,7 +25,7 @@
     \vspace{0.5in}
 
     \large
-    \textbf{Analysis of the "Digital Venti Effect"} \\
+    \textbf{Analysis of the ``Digital Venti Effect''} \\
     \vspace{1.5in}
 
     % --- Author Section ---
@@ -45,21 +45,43 @@
 \newpage
 
 \section{General description of the dataset}
-\noindent The subject of the project is a statistical analysis of the "Starbucks Customer Ordering Patterns" dataset. This dataset tracks customer behavior, focusing on how orders are placed, the financial value of those orders, and the time required for fulfillment. To ensure the methods are adjusted to the dataset, five key features have been isolated to analyze trends in spending, demographic preferences, and operational efficiency.
+\noindent The subject of the project is a statistical analysis of the ``Starbucks Customer Ordering Patterns'' dataset. This dataset tracks customer behavior, focusing on how orders are placed, the financial value of those orders, and the time required for fulfillment. To ensure the methods are adjusted to the dataset, five key features have been isolated to analyze trends in spending, demographic preferences, and operational efficiency.
 \section{Summary of attributes}
+
+%Order Channel
+
+\subsection{order\_channel}
+\subsubsection{description}
+we use this feature to check how customers were placing orders. Available
+options were Mobile App, Drive-Thru, In-Store Cashier, Kiosk.
+\subsection{graph representation}
+%import of the pie chart
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
+\end{figure}
+
+
+%total spent
+
+%num customizations
+
+%customer age group
+
+%fulfillment time 
+
 \section{Expected relationships between the attributes}
 \section{Theoretical aspects and understanding of the methods}
 \section{Proposal of analyses to be conducted}
-\section{Attributes visualisation}
+\section{Attributes visualization}
 \section{Calculation of descriptive statistics}
 \section{Interval estimation}
 \section{Testing of the hypothesis about the normality of distributions}
 \section{Non-parametric estimation}
 \section{Comparison of attribute statistics for different classes}
-\section{Assesment of dependency between chosen attributes}
+\section{Assessment of dependency between chosen attributes}
 \section{Determination of coefficients of linear regression}
 \section{Evaluation of the accuracy of regression}
 \section{Stating and verifying proper statistical hypotheses}
 \section{Results and conclusions}
-
 \end{document}
