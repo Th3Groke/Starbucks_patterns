@@ -2,22 +2,23 @@ library(readr)
 
 my_data <- read_csv("./starbucks_customer_ordering_patterns.csv")
 
+min_val <- min(my_data$fulfillment_time_min, na.rm = TRUE)
+max_val <- max(my_data$fulfillment_time_min, na.rm = TRUE)
 
-chart_data <- aggregate(fulfillment_time_min ~ num_customizations, 
-                        data = my_data, 
-                        FUN = mean)
+pdf("fulfillment_time_histogram.pdf", width = 7, height = 5)
 
-colors <- c("#f7fcf5", "#e5f5e0", "#c7e9c0", "#a1d99b", "#74c476", "#41ab5d", "#238b45", "#006d2c", "#00441b")
+hist(my_data$fulfillment_time_min,
+     breaks = seq(min_val, max_val, length.out = 31),
+     col = "#00704A",
+     border = "white",
+     main = "Distribution of Fulfillment Time",
+     xlab = "Fulfillment Time (min)",
+     ylab = "Frequency",
+     xlim = c(min_val, max_val),
+     xaxt = "n",
+     xaxs = "i"
+     )
 
-pdf("customization_impact_analysis.pdf", width = 7, height = 5)
-
-barplot(chart_data$fulfillment_time_min, 
-        names.arg = chart_data$num_customizations,
-        col = colors,
-        main = "Fulfillment Time by Number of Customizations",
-        xlab = "Number of Customizations",
-        ylab = "Average Fulfillment Time (min)",
-        ylim = c(0, max(chart_data$fulfillment_time_min) * 1.2)
-        )
+axis(1, at = c(min_val, 4, 6, 8, max_val), labels = c(min_val, 4, 6, 8, max_val))
 
 dev.off()
