@@ -10,9 +10,9 @@ pdf("Resources/Charts/customer_age_group_bar_chart.pdf", width = 5, height = 4)
 
 barplot(chart_data,
         col = colors,
-        main = "Customer Age Groups",
+        main = "",
         xlab = "Age Group",
         ylab = "Count"
-        )
+)
 
 dev.off()
