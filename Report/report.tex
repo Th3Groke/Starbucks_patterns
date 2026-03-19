@@ -63,7 +63,7 @@
     \begin{itemize}
       \item IDs: 
         \begin{itemize}
-        \item customer \_id: unique identifier for each customer 15000 unique profiles 
+        \item customer \_id: unique identifier for each customer (15000 unique profiles), 
         \item order\_id: unique transaction id (100 000 orders),
         \item store\_id: identifier for each store,
         \end{itemize}
@@ -71,7 +71,7 @@
     \begin{itemize}
     \item Date:
         \begin{itemize}
-        \item order\_date: (01.2024-12.2025),
+        \item order\_date: (ranging from 01.2024 to 12.2025),
         \item order\_time,
         \item day\_of\_week,
         \end{itemize}
@@ -81,17 +81,17 @@
         \begin{itemize}
         \item order\_channel: method used to place the order (Mobile App, Drive-Thru, In-Store Cashier or Kiosk),
         \item store\_location\_type: (Urban, Suburban or Rural)
-        \item region: (Northeast, Southeast, Midwest, West, or Southwest),
-        \item customer\_age\_group: (18-24, 25-34, 35-44, 45-54 or 55+).
-        \item customer\_gender,
+        \item region: (Northeast, Southeast, Midwest, West or Southwest),
+        \item customer\_age\_group: (18-24, 25-34, 35-44, 45-54 or 55+),
+        \item customer\_gender: (Male, Female or Other),
         \item is\_rewards\_member: whether the customer is a member of the Starbucks Rewards program (True or False),
         \item cart\_size: number of items in the order,
-        \item num\_customizations: number of modifications made to the order (e.g., extra shots, syrup, milk sub),
+        \item num\_customizations: number of modifications made to the order (extra shots, syrup, different milk),
         \item total\_spend: total cost of the transaction in USD\@,
         \item fulfillment\_time\_min: time (in minutes) from the moment the order is placed until it is ready for the customer,
         \item drink\_category: (Coffee, Tea, Refresher or Other),
         \item has\_food\_item: (True or False),
-        \item order\_ahead: whether the order was placed ahead of time (True or False).
+        \item order\_ahead: whether the order was placed ahead of time (True or False),
         \item customer\_satifsaction: rating from 1 to 5 (correlated with fulfillment time and channel),
 
         \end{itemize}
