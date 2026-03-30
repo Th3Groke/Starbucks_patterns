@@ -175,7 +175,85 @@ We will use this feature to check how customers were placing orders.
 
 \subsubsection{use-case}
 \noindent We will analyze this attribute to determine how the complexity of an order (number of customizations) affects service speed. This helps identify whether encouraging modifications leads to operational bottlenecks.
+
 \chapter{Calculation of descriptive statistics}
+\section{Descriptive statistics by attribute}
+\subsection{order\_channel}
+\noindent As the order\_channel is presented as a string, we will calculate the mode and cardinality to understand the distribution of ordering methods among customers. This will help us identify which channels are most popular and if there are any significant differences in customer preferences.
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result \\ \hline
+            mode  & 25-34 \\ \hline
+            cardinality & 5      \\ \hline
+        \end{tabular}
+    \end{table}
+
+\subsection{total\_spend}
+\noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result \\ \hline
+            mean value & 14.8667708 \\ \hline
+            median value & 14.17 \\ \hline
+            mode value & 12.1453342509566 \\ \hline
+            range & 3.51 - 40.31 \\ \hline
+            standard deviation & 5.50680009558536 \\ \hline
+            0.25 Quartile & 10.8375\\ \hline
+            0.75 Quartile & 18.18\\ \hline
+        \end{tabular}
+    \end{table}
+\subsection{num\_customizations}
+\noindent As num\_customizations is a discrete numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of order modifications among customers. This will help us identify average customization patterns, variability in the number of modifications per order, and whether certain customers tend to customize their orders significantly more than others.
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result \\ \hline
+            mean value& 1.81077 \\ \hline
+            median value& 2 \\ \hline
+            mode value& 0.998356888479198 \\ \hline
+            range& 0 - 8 \\ \hline
+            standard deviation& 1.46279985129078 \\ \hline
+            0.25 Quartile& 1 \\ \hline
+            0.75 Quartile& 3 \\ \hline
+        \end{tabular}
+    \end{table}
+\subsection{customer\_age\_group}
+\noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result \\ \hline
+            mode  & 25-34 \\ \hline
+            cardinality & 5      \\ \hline
+        \end{tabular}
+    \end{table}
+\subsection{fulfillment\_time\_min}
+\noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences.
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result \\ \hline
+            mean value& 4.54608 \\ \hline
+            median value& 4.4\\ \hline
+            mode value& 4.31807337490211\\ \hline
+            range& 1 - 11.2\\ \hline
+            standard deviation& 1.55026948204314\\ \hline
+            0.25 Quartile& 3.4\\ \hline
+            0.75 Quartile& 5.5\\ \hline
+        \end{tabular}
+    \end{table}
 \chapter{Attributes visualization}
 \chapter{Testing of the hypothesis about the normality of distributions}
 \chapter{Expected relationships between the attributes}
