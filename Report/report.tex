@@ -113,9 +113,11 @@ Kiosk.
 \subsubsection{graph representation}
 %import of the pie chart
 \begin{figure}[H]
+    \caption{Percentage distribution of order channels}
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
 \end{figure}
+
 \subsubsection{use-case}
 We will use this feature to check how customers were placing orders.
 
@@ -127,6 +129,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 %import of the histogram
 \begin{figure}[H]
+    \caption{Distribution of total spend among customers}
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
 \end{figure}
@@ -141,6 +144,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 %import of the ...
 \begin{figure}[H]
+    \caption{Distribution of the number of customizations among customers}
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
 \end{figure}
@@ -154,6 +158,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 %import of the bar chart
 \begin{figure}[H]
+    \caption{Distribution of customer age groups}
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
 \end{figure}
@@ -169,6 +174,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 % import of the bar chart for fulfillment time
 \begin{figure}[H]
+    \caption{Distribution of fulfillment time among customers}
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/fulfillment_time_histogram.pdf}
 \end{figure}
@@ -181,7 +187,8 @@ We will use this feature to check how customers were placing orders.
 \subsection{order\_channel}
 \noindent As the order\_channel is presented as a string, we will calculate the mode and cardinality to understand the distribution of ordering methods among customers. This will help us identify which channels are most popular and if there are any significant differences in customer preferences.
 
-    \begin{table}[h]
+    \begin{table}[H]
+        \caption{Descriptive statistics for order\_channel}
         \centering
         \begin{tabular}{|l|l|l|}
             \hline
@@ -194,7 +201,8 @@ We will use this feature to check how customers were placing orders.
 \subsection{total\_spend}
 \noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
 
-    \begin{table}[h]
+    \begin{table}[H]
+        \caption{Descriptive statistics for total\_spend}
         \centering
         \begin{tabular}{|l|l|l|}
             \hline
@@ -208,10 +216,12 @@ We will use this feature to check how customers were placing orders.
             0.75 Quartile & 18.18\\ \hline
         \end{tabular}
     \end{table}
+
 \subsection{num\_customizations}
 \noindent As num\_customizations is a discrete numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of order modifications among customers. This will help us identify average customization patterns, variability in the number of modifications per order, and whether certain customers tend to customize their orders significantly more than others.
 
-    \begin{table}[h]
+    \begin{table}[H]
+        \caption{Descriptive statistics for num\_customizations}
         \centering
         \begin{tabular}{|l|l|l|}
             \hline
@@ -228,7 +238,8 @@ We will use this feature to check how customers were placing orders.
 \subsection{customer\_age\_group}
 \noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
 
-    \begin{table}[h]
+    \begin{table}[H]
+        \caption{Descriptive statistics for customer\_age\_group}
         \centering
         \begin{tabular}{|l|l|l|}
             \hline
@@ -240,7 +251,8 @@ We will use this feature to check how customers were placing orders.
 \subsection{fulfillment\_time\_min}
 \noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences.
 
-    \begin{table}[h]
+    \begin{table}[H]
+        \caption{Descriptive statistics for fulfillment\_time\_min}
         \centering
         \begin{tabular}{|l|l|l|}
             \hline
