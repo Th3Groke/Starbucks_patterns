@@ -60,42 +60,42 @@
 \noindent The subject of the project is a statistical analysis of the ``Starbucks Customer Ordering Patterns'' dataset. This dataset, which was published on Kaggle, consists of 100 000 real transactions made by Starbucks customers over a two-year period (2024-2025). It allows to analyse customer behavior, focusing on how orders are placed, the financial value of those orders, and the time required for fulfillment. To ensure the methods are adjusted to the dataset, five key features have been isolated to analyze trends in spending, demographic preferences, and operational efficiency.
 
 \section{All attributes}
-    \begin{itemize}
-      \item IDs: 
-        \begin{itemize}
-        \item customer \_id: unique identifier for each customer (15000 unique profiles), 
-        \item order\_id: unique transaction id (100 000 orders),
-        \item store\_id: identifier for each store,
-        \end{itemize}
-    \end{itemize}
-    \begin{itemize}
+\begin{itemize}
+    \item IDs:
+          \begin{itemize}
+              \item customer \_id: unique identifier for each customer (15000 unique profiles),
+              \item order\_id: unique transaction id (100 000 orders),
+              \item store\_id: identifier for each store,
+          \end{itemize}
+\end{itemize}
+\begin{itemize}
     \item Date:
-        \begin{itemize}
-        \item order\_date: (ranging from 01.2024 to 12.2025),
-        \item order\_time,
-        \item day\_of\_week,
-        \end{itemize}
-    \end{itemize}
-    \begin{itemize}
+          \begin{itemize}
+              \item order\_date: (ranging from 01.2024 to 12.2025),
+              \item order\_time,
+              \item day\_of\_week,
+          \end{itemize}
+\end{itemize}
+\begin{itemize}
     \item Order:
-        \begin{itemize}
-        \item order\_channel: method used to place the order (Mobile App, Drive-Thru, In-Store Cashier or Kiosk),
-        \item store\_location\_type: (Urban, Suburban or Rural)
-        \item region: (Northeast, Southeast, Midwest, West or Southwest),
-        \item customer\_age\_group: (18-24, 25-34, 35-44, 45-54 or 55+),
-        \item customer\_gender: (Male, Female or Other),
-        \item is\_rewards\_member: whether the customer is a member of the Starbucks Rewards program (True or False),
-        \item cart\_size: number of items in the order,
-        \item num\_customizations: number of modifications made to the order (extra shots, syrup, different milk),
-        \item total\_spend: total cost of the transaction in USD\@,
-        \item fulfillment\_time\_min: time (in minutes) from the moment the order is placed until it is ready for the customer,
-        \item drink\_category: (Coffee, Tea, Refresher or Other),
-        \item has\_food\_item: (True or False),
-        \item order\_ahead: whether the order was placed ahead of time (True or False),
-        \item customer\_satifsaction: rating from 1 to 5 (correlated with fulfillment time and channel),
+          \begin{itemize}
+              \item order\_channel: method used to place the order (Mobile App, Drive-Thru, In-Store Cashier or Kiosk),
+              \item store\_location\_type: (Urban, Suburban or Rural)
+              \item region: (Northeast, Southeast, Midwest, West or Southwest),
+              \item customer\_age\_group: (18-24, 25-34, 35-44, 45-54 or 55+),
+              \item customer\_gender: (Male, Female or Other),
+              \item is\_rewards\_member: whether the customer is a member of the Starbucks Rewards program (True or False),
+              \item cart\_size: number of items in the order,
+              \item num\_customizations: number of modifications made to the order (extra shots, syrup, different milk),
+              \item total\_spend: total cost of the transaction in USD\@,
+              \item fulfillment\_time\_min: time (in minutes) from the moment the order is placed until it is ready for the customer,
+              \item drink\_category: (Coffee, Tea, Refresher or Other),
+              \item has\_food\_item: (True or False),
+              \item order\_ahead: whether the order was placed ahead of time (True or False),
+              \item customer\_satifsaction: rating from 1 to 5 (correlated with fulfillment time and channel),
 
-        \end{itemize}
-    \end{itemize}
+          \end{itemize}
+\end{itemize}
 
 
 
@@ -113,7 +113,7 @@ Kiosk.
 \subsubsection{graph representation}
 %import of the pie chart
 \begin{figure}[H]
-    
+
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
     \caption{Percentage distribution of order channels}
@@ -130,7 +130,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 %import of the histogram
 \begin{figure}[H]
-    
+
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
     \caption{Distribution of total spend among customers}
@@ -146,7 +146,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 %import of the ...
 \begin{figure}[H]
-    
+
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
     \caption{Distribution of the number of customizations among customers}
@@ -161,7 +161,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 %import of the bar chart
 \begin{figure}[H]
-    
+
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
     \caption{Distribution of customer age groups}
@@ -178,7 +178,7 @@ We will use this feature to check how customers were placing orders.
 \subsubsection{graph representation}
 % import of the bar chart for fulfillment time
 \begin{figure}[H]
-    
+
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/fulfillment_time_histogram.pdf}
     \caption{Distribution of fulfillment time among customers}
@@ -192,93 +192,106 @@ We will use this feature to check how customers were placing orders.
 \subsection{order\_channel}
 \noindent As the order\_channel is presented as a string, we will calculate the mode and cardinality to understand the distribution of ordering methods among customers. This will help us identify which channels are most popular and if there are any significant differences in customer preferences.
 
-    \begin{table}[H]
-        
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            Measure of a central tendency & Obtained result \\ \hline
-            mode  & 25-34 \\ \hline
-            cardinality & 5      \\ \hline
-        \end{tabular}
-        \caption{Descriptive statistics for order\_channel}
-    \end{table}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure of a central tendency & Obtained result \\ \hline
+        mode                          & 25-34           \\ \hline
+        cardinality                   & 5               \\ \hline
+    \end{tabular}
+    \caption{Descriptive statistics for order\_channel}
+\end{table}
 
 \subsection{total\_spend}
 \noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
 
-    \begin{table}[H]
-        
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            Measure of a central tendency & Obtained result \\ \hline
-            mean value & 14.8667708 \\ \hline
-            median value & 14.17 \\ \hline
-            mode value & 12.1453342509566 \\ \hline
-            range & 3.51 - 40.31 \\ \hline
-            standard deviation & 5.50680009558536 \\ \hline
-            0.25 Quartile & 10.8375\\ \hline
-            0.75 Quartile & 18.18\\ \hline
-        \end{tabular}
-        \caption{Descriptive statistics for total\_spend}
-    \end{table}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure of a central tendency & Obtained result  \\ \hline
+        mean value                    & 14.8667708       \\ \hline
+        median value                  & 14.17            \\ \hline
+        mode value                    & 12.1453342509566 \\ \hline
+        range                         & 3.51 - 40.31     \\ \hline
+        standard deviation            & 5.50680009558536 \\ \hline
+        0.25 Quartile                 & 10.8375          \\ \hline
+        0.75 Quartile                 & 18.18            \\ \hline
+    \end{tabular}
+    \caption{Descriptive statistics for total\_spend}
+\end{table}
 
 \subsection{num\_customizations}
 \noindent As num\_customizations is a discrete numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of order modifications among customers. This will help us identify average customization patterns, variability in the number of modifications per order, and whether certain customers tend to customize their orders significantly more than others.
 
-    \begin{table}[H]
-        
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            Measure of a central tendency & Obtained result \\ \hline
-            mean value& 1.81077 \\ \hline
-            median value& 2 \\ \hline
-            mode value& 0.998356888479198 \\ \hline
-            range& 0 - 8 \\ \hline
-            standard deviation& 1.46279985129078 \\ \hline
-            0.25 Quartile& 1 \\ \hline
-            0.75 Quartile& 3 \\ \hline
-        \end{tabular}
-        \caption{Descriptive statistics for num\_customizations}
-    \end{table}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure of a central tendency & Obtained result   \\ \hline
+        mean value                    & 1.81077           \\ \hline
+        median value                  & 2                 \\ \hline
+        mode value                    & 0.998356888479198 \\ \hline
+        range                         & 0 - 8             \\ \hline
+        standard deviation            & 1.46279985129078  \\ \hline
+        0.25 Quartile                 & 1                 \\ \hline
+        0.75 Quartile                 & 3                 \\ \hline
+    \end{tabular}
+    \caption{Descriptive statistics for num\_customizations}
+\end{table}
 \subsection{customer\_age\_group}
 \noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
 
-    \begin{table}[H]
-       
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            Measure of a central tendency & Obtained result \\ \hline
-            mode  & 25-34 \\ \hline
-            cardinality & 5      \\ \hline
-        \end{tabular}
+\begin{table}[H]
 
-         \caption{Descriptive statistics for customer\_age\_group}
-    \end{table}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure of a central tendency & Obtained result \\ \hline
+        mode                          & 25-34           \\ \hline
+        cardinality                   & 5               \\ \hline
+    \end{tabular}
+
+    \caption{Descriptive statistics for customer\_age\_group}
+\end{table}
 \subsection{fulfillment\_time\_min}
 \noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences.
 
-    \begin{table}[H]
-        
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            Measure of a central tendency & Obtained result \\ \hline
-            mean value& 4.54608 \\ \hline
-            median value& 4.4\\ \hline
-            mode value& 4.31807337490211\\ \hline
-            range& 1 - 11.2\\ \hline
-            standard deviation& 1.55026948204314\\ \hline
-            0.25 Quartile& 3.4\\ \hline
-            0.75 Quartile& 5.5\\ \hline
-        \end{tabular}
-        \caption{Descriptive statistics for fulfillment\_time\_min}
-    \end{table}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure of a central tendency & Obtained result  \\ \hline
+        mean value                    & 4.54608          \\ \hline
+        median value                  & 4.4              \\ \hline
+        mode value                    & 4.31807337490211 \\ \hline
+        range                         & 1 - 11.2         \\ \hline
+        standard deviation            & 1.55026948204314 \\ \hline
+        0.25 Quartile                 & 3.4              \\ \hline
+        0.75 Quartile                 & 5.5              \\ \hline
+    \end{tabular}
+    \caption{Descriptive statistics for fulfillment\_time\_min}
+\end{table}
 \chapter{Attributes visualization}
 \chapter{Testing of the hypothesis about the normality of distributions}
+\section{Formulation of the Hypotheses}
+To determine the appropriate statistical methods for further analysis, it is necessary to test whether the continuous variables in the dataset specifically the total cost of the transaction (total\_spend) and the time from order placement to completion (fulfillment\_time\_min) — follow a normal (Gaussian) distribution.
+For each of these variables, the following statistical hypotheses are established:
+\begin{itemize}
+    \item \[H_0\]:The distribution of the analyzed variable follows a normal distribution.
+    \item \[H_1\]:The distribution of the analyzed variable does not follow a normal distribution.
+
+\end{itemize}
+The adopted level of significance for all statistical tests in this report is alpha=0.05.
+\section{Visual Assessment Using Q-Q Plots}
+\section{Analysis of Skewness and Kurtosis}
+\section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
+\section{Conclusion on Normality}
 \chapter{Expected relationships between the attributes}
 \chapter{Additional analyses aka something new}
 \chapter{Results and conclusions}
