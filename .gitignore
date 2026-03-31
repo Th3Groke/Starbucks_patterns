@@ -4,6 +4,7 @@
 /node_modules
 package.json
 package-lock.json
+*.pdf
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
