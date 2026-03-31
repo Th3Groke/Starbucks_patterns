@@ -1,6 +1,6 @@
 library(readr)
 
-data <- read.csv("starbucks_customer_ordering_patterns.csv")
+data <- read_csv("starbucks_customer_ordering_patterns.csv")
 
 fulfillment <- data$fulfillment_time_min
 pdf("Resources/Charts/Normality_testing/fulfillment_Q-Q.pdf",width = 7,height = 5)

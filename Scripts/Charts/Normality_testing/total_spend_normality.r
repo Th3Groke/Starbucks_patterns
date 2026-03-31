@@ -1,6 +1,6 @@
 library(readr)
 
-data <- read.csv("./starbucks_customer_ordering_patterns.csv")
+data <- read_csv("./starbucks_customer_ordering_patterns.csv")
 pdf("Resources/Charts/Normality_testing/total_spend_Q-Q.pdf")
 total_spend <- data$total_spend
 
