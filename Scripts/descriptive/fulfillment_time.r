@@ -7,7 +7,7 @@ estimate_mode <- function(x) {
   d <- density(x)
   d$x[which.max(d$y)]
 }
-
+#end Source
 
 dataset <- read.csv("./starbucks_customer_ordering_patterns.csv")
 my_data <- dataset$fulfillment_time_min
