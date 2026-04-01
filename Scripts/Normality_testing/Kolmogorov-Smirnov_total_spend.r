@@ -7,7 +7,8 @@ data <- read_csv("starbucks_customer_ordering_patterns.csv")
 mean_spend <- mean(data$total_spend, na.rm = TRUE)
 sigma_spend <- sd(data$total_spend, na.rm = TRUE)
 
-ks_result_spent <- ks.test(data$total_spend, "pnorm", mean=mean_spend, sd=sigma_spend)
+ks_result_spent <- ks.test(data$total_spend, "pnorm",
+                           mean = mean_spend, sd = sigma_spend)
 
 print(ks_result_spent)
 
