@@ -59,7 +59,8 @@
 \chapter{General description of the dataset}
 \noindent The subject of the project is a statistical analysis of the ``Starbucks Customer Ordering Patterns'' dataset. This dataset, which was published on Kaggle, consists of 100 000 real transactions made by Starbucks customers over a two-year period (2024-2025). It allows to analyse customer behavior, focusing on how orders are placed, the financial value of those orders, and the time required for fulfillment. To ensure the methods are adjusted to the dataset, five key features have been isolated to analyze trends in spending, demographic preferences, and operational efficiency.
 
-\section{All attributes}
+\section{Attributes of the dataset}
+Below there is a list of all attributes of the dataset.
 \begin{itemize}
     \item IDs:
           \begin{itemize}
@@ -97,7 +98,7 @@
           \end{itemize}
 \end{itemize}
 
-
+\pagebreak
 
 \section{Summary of selected attributes}
 
@@ -112,6 +113,8 @@ placing order. Available options were Mobile App, Drive-Thru, In-Store Cashier,
 Kiosk.
 \subsubsection{graph representation}
 %import of the pie chart
+
+in figure we can see graphical representation of order channels
 \begin{figure}[H]
 
     \centering
@@ -304,7 +307,7 @@ As observed in Figure 4.1, the data points for the total cost of the transaction
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/fulfillment_Q-Q.pdf}
     \caption{Normal Q-Q Plot for fulfillment\_time\_min}
 \end{figure}
-As illustrated in Figure 4.2, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order."
+As illustrated in Figure 4.2, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order.
 
 \section{Analysis of Skewness and Kurtosis}
 To quantitatively assess the shape of the data distributions, skewness and kurtosis were calculated. As a statistical baseline, a perfectly symmetrical normal distribution has a skewness of exactly 0 and a kurtosis of 3.0; deviations from these figures indicate directional skew and the presence of extreme outliers, respectively.
