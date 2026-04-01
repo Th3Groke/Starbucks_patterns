@@ -11,6 +11,7 @@
 * Changed the structure of the report (R)
 * Completed the descriptive statistics chapter in report
 * Completed Normality testing chapter in the report
+* Added descriptions to all attributes
   
 **Scripts:**
 * Modified the order_channel pie_chart to show percentages
