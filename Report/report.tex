@@ -337,8 +337,40 @@ The total\_spend variable exhibits a moderate positive skewness (0.67) and a kur
 \end{table}
 The fulfillment\_time\_min variable displays near-perfect symmetry with a minimal skewness of 0.36 and a kurtosis of 2.98, demonstrating that its tail behavior aligns almost perfectly with a theoretical normal distribution.
 \section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
+To conclusively determine whether the data follows a normal distribution, a Kolmogorov-Smirnov (K-S) test was conducted. The K-S test operates by comparing the actual distribution of the dataset against a theoretically perfect normal curve. In this test, the null hypothesis assumes that the data is perfectly normal. The resulting p-value indicates the probability of seeing the current data if it were truly normal; a p-value below the standard threshold of 0.05 means we must reject the null hypothesis and conclude that the data significantly deviates from a normal distribution.
+\subsection{total\_spend}
+\begin{table}[H]
 
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure              & Obtained result    \\ \hline
+        D (maximum distance) & 0.051314           \\ \hline
+        p-value              & $2.2\cdot10^{-16}$ \\ \hline
+    \end{tabular}
+
+    \caption{Kolmogorov-Smirnov test results for total\_spend}
+\end{table}
+For the total\_spend variable, the K-S test returned p-value equal $2.2\cdot10^{-16}$
+Because this p-value is vastly smaller than 0.05, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
+\subsection{fulfillment\_time\_min}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure              & Obtained result    \\ \hline
+        D (maximum distance) & 0.039321           \\ \hline
+        p-value              & $2.2\cdot10^{-16}$ \\ \hline
+    \end{tabular}
+
+    \caption{Kolmogorov-Smirnov test results for fulfillment\_time\_min}
+\end{table}
+Similarly the p-value for  fulfillment\_time\_min equals $2.2\cdot10^{-16}$.
+Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
 \section{Conclusion on Normality}
+Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both total\_spend and fulfillment\_time\_min deviates from strict normality.
+For total\_spend, this deviation is driven by a small number of extreme high-value purchases that stretch the data upward. For fulfillment\_time\_min, the data is highly symmetrical but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
 \chapter{Expected relationships between the attributes}
 \chapter{Additional analyses aka something new}
 \chapter{Results and conclusions}
