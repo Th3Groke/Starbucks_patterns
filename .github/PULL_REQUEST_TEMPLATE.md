@@ -6,6 +6,6 @@ Closes # [Insert Issue Number here]
 
 ## ✅ Checklist
 - [ ] LaTeX compiles without errors (no missing packages)
-- [ ] Python scripts run without errors
+- [ ] R scripts run without errors
 - [ ] Figures/Images are correctly referenced
 - [ ] Polish diacritics (ę, ó, ł) render correctly
