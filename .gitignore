@@ -5,6 +5,8 @@
 package.json
 package-lock.json
 
+#didn't know this would be necessary
+Report/report.pdf
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
