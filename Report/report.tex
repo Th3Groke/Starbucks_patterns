@@ -289,8 +289,55 @@ For each of these variables, the following statistical hypotheses are establishe
 \end{itemize}
 The adopted level of significance for all statistical tests in this report is alpha=0.05.
 \section{Visual Assessment Using Q-Q Plots}
+To initially assess the distribution of the continuous variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely with the diagonal reference line.
+\subsection{total\_spend}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/total_spend_Q-Q.pdf}
+    \caption{Normal Q-Q Plot for total\_spend}
+\end{figure}
+%TODO
+As observed in Figure 4.1, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum.
+\subsection{fulfillment\_time\_min}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/fulfillment_Q-Q.pdf}
+    \caption{Normal Q-Q Plot for fulfillment\_time\_min}
+\end{figure}
+As illustrated in Figure 4.2, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order."
+
 \section{Analysis of Skewness and Kurtosis}
+To quantitatively assess the shape of the data distributions, skewness and kurtosis were calculated. As a statistical baseline, a perfectly symmetrical normal distribution has a skewness of exactly 0 and a kurtosis of 3.0; deviations from these figures indicate directional skew and the presence of extreme outliers, respectively.
+\subsection{total\_spend}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure  & Obtained result  \\ \hline
+        Skewness & 0.67007900905166 \\ \hline
+        Kurtosis & 3.37746288170318 \\ \hline
+    \end{tabular}
+
+    \caption{Skewness and Kurtosis results for total\_spend}
+\end{table}
+The total\_spend variable exhibits a moderate positive skewness (0.67) and a kurtosis of 3.38, indicating a right-skewed distribution with slightly heavier tails than a standard normal curve due to a subset of high-value transactions.
+\subsection{fulfillment\_time\_min}
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure  & Obtained result   \\ \hline
+        Skewness & 0.363767571948986 \\ \hline
+        Kurtosis & 2.98159553637017  \\ \hline
+    \end{tabular}
+
+    \caption{Skewness and Kurtosis results for fulfillment\_time\_min}
+\end{table}
+The fulfillment\_time\_min variable displays near-perfect symmetry with a minimal skewness of 0.36 and a kurtosis of 2.98, demonstrating that its tail behavior aligns almost perfectly with a theoretical normal distribution.
 \section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
+
 \section{Conclusion on Normality}
 \chapter{Expected relationships between the attributes}
 \chapter{Additional analyses aka something new}
