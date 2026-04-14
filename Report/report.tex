@@ -114,12 +114,13 @@ Kiosk.
 \subsubsection{graph representation}
 %import of the pie chart
 
-in [figure] we can see graphical representation of order channels %TODO: replace [figure] with \ref when possible
+In figure \ref{fig:order_channel_pie} we can see graphical representation of order channels
 \begin{figure}[H]
 
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
     \caption{Percentage distribution of order channels}
+    \label{fig:order_channel_pie}
 \end{figure}
 
 \subsubsection{use-case}
@@ -137,6 +138,7 @@ We will use this feature to check how customers were placing orders.
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
     \caption{Distribution of total spend among customers}
+    \label{fig:total_spend_histogram}
 \end{figure}
 
 \subsubsection{use-case}
@@ -153,6 +155,7 @@ We will use this feature to check how customers were placing orders.
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
     \caption{Distribution of the number of customizations among customers}
+    \label{fig:num_customizations_histogram}
 \end{figure}
 \subsubsection{use-case}
 \noindent We will use this data to check if mobile app users demonstrate higher tendency to customizing their orders.
@@ -168,6 +171,7 @@ We will use this feature to check how customers were placing orders.
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
     \caption{Distribution of customer age groups}
+    \label{fig:customer_age_group_bar}
 \end{figure}
 
 \subsubsection{use-case}
@@ -185,6 +189,7 @@ We will use this feature to check how customers were placing orders.
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/fulfillment_time_histogram.pdf}
     \caption{Distribution of fulfillment time among customers}
+    \label{fig:fulfillment_time_histogram}
 \end{figure}
 
 \subsubsection{use-case}
@@ -297,16 +302,17 @@ To initially assess the distribution of the continuous variables, Quantile-Quant
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/total_spend_Q-Q.pdf}
     \caption{Normal Q-Q Plot for total\_spend}
+    \label{fig:total_spend_qq}
 \end{figure}
-%TODO
-As observed in Figure 4.1, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum.
+As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum.
 \subsection{fulfillment\_time\_min}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/fulfillment_Q-Q.pdf}
     \caption{Normal Q-Q Plot for fulfillment\_time\_min}
+    \label{fig:fulfillment_time_qq}
 \end{figure}
-As illustrated in Figure 4.2, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order.
+As illustrated in \ref{fig:fulfillment_time_qq}, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order.
 
 \section{Analysis of Skewness and Kurtosis}
 To quantitatively assess the shape of the data distributions, skewness and kurtosis were calculated. As a statistical baseline, a perfectly symmetrical normal distribution has a skewness of exactly 0 and a kurtosis of 3.0; deviations from these figures indicate directional skew and the presence of extreme outliers, respectively.
