@@ -260,6 +260,14 @@ The following subsection details the primary descriptive statistics for each sel
     \label{tab:desc_total_spend}
 \end{table}
 
+\noindent Here is the box-plot presenting total\_spend characteristics
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/box-plots/total_spend-box.pdf}
+    \label{fig:total_spend-box}
+    \caption{box-plot presenting distribution of total value of an order}
+\end{figure}
 
 
 \subsection{fulfillment\_time\_min}
@@ -282,6 +290,31 @@ The following subsection details the primary descriptive statistics for each sel
     \caption{Descriptive statistics for fulfillment\_time\_min}
     \label{tab:desc_fulfillment_time}
 \end{table}
+
+\noindent In graph \ref{fig:fulfillment_time-box} we can see the box-plot presnting fulfillment time characteristics. We can observe a quite large number of outliers, but it should be considered normal in a dataset this big.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/box-plots/fulfillemnt_time_min-box.pdf}
+    \label{fig:fulfillment_time-box}
+    \caption{box-plot presenting distribution of fulfillment time}
+\end{figure}
+
+\subsection{Total\_spend and order\_channel comparison}
+Graph \ref{fig:total_spend-order_channel-box} presents comparison of total\_spend and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/box-plots/total_spend-order_channel-box.pdf}
+    \label{fig:total_spend-order_channel-box}
+    \caption{box-plot comparing total\_spend and order\_channel characteristics}
+\end{figure}
+
+
+
 \chapter{Testing of the hypothesis about the normality of distributions}
 \section{Formulation of the Hypotheses}
 To determine the appropriate statistical methods for further analysis, it is necessary to test whether the continuous variables in the dataset specifically the total cost of the transaction (total\_spend) and the time from order placement to completion (fulfillment\_time\_min) — follow a normal (Gaussian) distribution.
