@@ -101,8 +101,7 @@ Below there is a list of all attributes of the dataset.
 \pagebreak
 
 \section{Summary of selected attributes}
-
-%add some information about the dataset; the origin, how many elememts are in the set, short description of all attributes, some of them described, 
+The following section provides a descriptive summary of the specific attributes selected for this analysis.
 
 %Order Channel
 
@@ -123,7 +122,8 @@ We will use this feature to check how customers were placing orders.
 
 %total spent
 \subsection{total\_spend}
-\noindent This feature shows the total cost of the transaction in USD\@.
+\noindent This feature shows the total cost of the transaction in USD\@. \\
+In Figure \ref{fig:total_spend_histogram} we can see graphical representation of total amount spent on transactions.
 %import of the histogram
 \begin{figure}[H]
 
@@ -137,7 +137,8 @@ We will use this feature to check how customers were placing orders.
 
 %num customizations - Zuzia robi
 \subsection{num\_customizations}
-\noindent This feature shows the number of modifications made to the order (e.g., extra shots, syrup, milk sub).
+\noindent This feature shows the number of modifications made to the order (e.g., extra shots, syrup, milk sub). \\
+In Figure \ref{fig:num_customizations_histogram} we can see graphical representation of the number of customizations.
 %import of the ...
 \begin{figure}[H]
 
@@ -150,7 +151,8 @@ We will use this feature to check how customers were placing orders.
 
 %customer age group - Mateusz robi
 \subsection{customer\_age\_group}
-\noindent This feature shows the age group of the customer.
+\noindent This feature shows the age group of the customer. \\
+In Figure \ref{fig:customer_age_group_bar} we can see graphical representation of the age group of customers.
 %import of the bar chart
 \begin{figure}[H]
 
@@ -165,7 +167,8 @@ We will use this feature to check how customers were placing orders.
 
 %fulfillment time - Oliwier robi
 \subsection{fulfillment\_time\_min}
-\noindent This feature measures the time (in minutes) from the moment the order is placed until it is ready for the customer. It is a key metric for operational efficiency.
+\noindent This feature measures the time (in minutes) from the moment the order is placed until it is ready for the customer. It is a key metric for operational efficiency. \\
+In Figure \ref{fig:fulfillment_time_histogram} we can see graphical representation of the fulfillment time.
 % import of the bar chart for fulfillment time
 \begin{figure}[H]
 
@@ -178,7 +181,9 @@ We will use this feature to check how customers were placing orders.
 \noindent We will analyze this attribute to determine how the complexity of an order (number of customizations) affects service speed. This helps identify whether encouraging modifications leads to operational bottlenecks.
 
 \chapter{Calculation of descriptive statistics}
+
 \section{Descriptive statistics by attribute}
+The following subsection details the primary descriptive statistics for each selected attribute.
 \subsection{order\_channel}
 \noindent As the order\_channel is presented as a string, we will calculate the mode and cardinality to understand the distribution of ordering methods among customers. This will help us identify which channels are most popular and if there are any significant differences in customer preferences.
 
@@ -285,6 +290,7 @@ The adopted level of significance for all statistical tests in this report is al
 \section{Visual Assessment Using Q-Q Plots}
 To initially assess the distribution of the continuous variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely with the diagonal reference line.
 \subsection{total\_spend}
+In Figure \ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount spent.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/total_spend_Q-Q.pdf}
@@ -293,6 +299,7 @@ To initially assess the distribution of the continuous variables, Quantile-Quant
 \end{figure}
 As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum.
 \subsection{fulfillment\_time\_min}
+In Figure \ref{fig:fulfillment_time_qq} we can see the Q-Q Plot for the fulfillment time.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/fulfillment_Q-Q.pdf}
@@ -304,6 +311,7 @@ As illustrated in \ref{fig:fulfillment_time_qq}, the Normal Q-Q plot for fulfill
 \section{Analysis of Skewness and Kurtosis}
 To quantitatively assess the shape of the data distributions, skewness and kurtosis were calculated. As a statistical baseline, a perfectly symmetrical normal distribution has a skewness of exactly 0 and a kurtosis of 3.0; deviations from these figures indicate directional skew and the presence of extreme outliers, respectively.
 \subsection{total\_spend}
+In Table \ref{tab:skew_kurt_total_spend} we can see the Skewness and Kurtosis results for total amount spent.
 \begin{table}[H]
 
     \centering
@@ -319,6 +327,7 @@ To quantitatively assess the shape of the data distributions, skewness and kurto
 \end{table}
 The total\_spend variable exhibits a moderate positive skewness (0.67) and a kurtosis of 3.38, indicating a right-skewed distribution with slightly heavier tails than a standard normal curve due to a subset of high-value transactions.
 \subsection{fulfillment\_time\_min}
+In Table \ref{tab:skew_kurt_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
 \begin{table}[H]
 
     \centering
@@ -336,6 +345,7 @@ The fulfillment\_time\_min variable displays near-perfect symmetry with a minima
 \section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
 To conclusively determine whether the data follows a normal distribution, a Kolmogorov-Smirnov (K-S) test was conducted. The K-S test operates by comparing the actual distribution of the dataset against a theoretically perfect normal curve. In this test, the null hypothesis assumes that the data is perfectly normal. The resulting p-value indicates the probability of seeing the current data if it were truly normal; a p-value below the standard threshold of 0.05 means we must reject the null hypothesis and conclude that the data significantly deviates from a normal distribution.
 \subsection{total\_spend}
+In Table \ref{tab:ks_total_spend} we can see the Skewness and Kurtosis results for total amount spent.
 \begin{table}[H]
 
     \centering
@@ -352,6 +362,7 @@ To conclusively determine whether the data follows a normal distribution, a Kolm
 For the total\_spend variable, the K-S test returned p-value equal $2.2\cdot10^{-16}$
 Because this p-value is vastly smaller than 0.05, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
 \subsection{fulfillment\_time\_min}
+In Table \ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
 \begin{table}[H]
 
     \centering
