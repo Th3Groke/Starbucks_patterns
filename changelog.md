@@ -30,7 +30,7 @@
 ## Third meeting - 15 April 2026
 **Report:**
 * Merged Descriptive statistics sections into one chapter
-* Added labels to all fiures and tables in the report
+* Added labels to all figures and tables in the report
 * removed headings and replaced them with short descriptions
 * changed the order of sections that make more sence
 * Added box-plots to descriptive statistics
