@@ -210,6 +210,7 @@ We will use this feature to check how customers were placing orders.
         cardinality                   & 5               \\ \hline
     \end{tabular}
     \caption{Descriptive statistics for order\_channel}
+    \label{tab:desc_order_channel}
 \end{table}
 
 \subsection{total\_spend}
@@ -230,6 +231,7 @@ We will use this feature to check how customers were placing orders.
         0.75 Quartile                 & 18.18            \\ \hline
     \end{tabular}
     \caption{Descriptive statistics for total\_spend}
+    \label{tab:desc_total_spend}
 \end{table}
 
 \subsection{num\_customizations}
@@ -250,6 +252,7 @@ We will use this feature to check how customers were placing orders.
         0.75 Quartile                 & 3                 \\ \hline
     \end{tabular}
     \caption{Descriptive statistics for num\_customizations}
+    \label{tab:desc_num_customizations}
 \end{table}
 \subsection{customer\_age\_group}
 \noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
@@ -265,6 +268,7 @@ We will use this feature to check how customers were placing orders.
     \end{tabular}
 
     \caption{Descriptive statistics for customer\_age\_group}
+    \label{tab:desc_customer_age_group}
 \end{table}
 \subsection{fulfillment\_time\_min}
 \noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences.
@@ -284,6 +288,7 @@ We will use this feature to check how customers were placing orders.
         0.75 Quartile                 & 5.5              \\ \hline
     \end{tabular}
     \caption{Descriptive statistics for fulfillment\_time\_min}
+    \label{tab:desc_fulfillment_time}
 \end{table}
 \chapter{Testing of the hypothesis about the normality of distributions}
 \section{Formulation of the Hypotheses}
@@ -328,6 +333,7 @@ To quantitatively assess the shape of the data distributions, skewness and kurto
     \end{tabular}
 
     \caption{Skewness and Kurtosis results for total\_spend}
+    \label{tab:skew_kurt_total_spend}
 \end{table}
 The total\_spend variable exhibits a moderate positive skewness (0.67) and a kurtosis of 3.38, indicating a right-skewed distribution with slightly heavier tails than a standard normal curve due to a subset of high-value transactions.
 \subsection{fulfillment\_time\_min}
@@ -342,6 +348,7 @@ The total\_spend variable exhibits a moderate positive skewness (0.67) and a kur
     \end{tabular}
 
     \caption{Skewness and Kurtosis results for fulfillment\_time\_min}
+    \label{tab:skew_kurt_fulfillment_time}
 \end{table}
 The fulfillment\_time\_min variable displays near-perfect symmetry with a minimal skewness of 0.36 and a kurtosis of 2.98, demonstrating that its tail behavior aligns almost perfectly with a theoretical normal distribution.
 \section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
@@ -358,6 +365,7 @@ To conclusively determine whether the data follows a normal distribution, a Kolm
     \end{tabular}
 
     \caption{Kolmogorov-Smirnov test results for total\_spend}
+    \label{tab:ks_total_spend}
 \end{table}
 For the total\_spend variable, the K-S test returned p-value equal $2.2\cdot10^{-16}$
 Because this p-value is vastly smaller than 0.05, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
@@ -373,6 +381,7 @@ Because this p-value is vastly smaller than 0.05, we decisively reject the null 
     \end{tabular}
 
     \caption{Kolmogorov-Smirnov test results for fulfillment\_time\_min}
+    \label{tab:ks_fulfillment_time}
 \end{table}
 Similarly the p-value for  fulfillment\_time\_min equals $2.2\cdot10^{-16}$.
 Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
