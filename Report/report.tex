@@ -107,14 +107,9 @@ Below there is a list of all attributes of the dataset.
 %Order Channel
 
 \subsection{order\_channel}
-\subsubsection{description}
 This feature lists which method of ordering was used by the customer while
-placing order. Available options were Mobile App, Drive-Thru, In-Store Cashier,
-Kiosk.
-\subsubsection{graph representation}
-%import of the pie chart
-
-In figure \ref{fig:order_channel_pie} we can see graphical representation of order channels
+placing order. Available options were Mobile App, Drive-Thru, In-Store Cashier, Kiosk. \\
+In Figure \ref{fig:order_channel_pie} we can see graphical representation of order channels.
 \begin{figure}[H]
 
     \centering
@@ -123,15 +118,12 @@ In figure \ref{fig:order_channel_pie} we can see graphical representation of ord
     \label{fig:order_channel_pie}
 \end{figure}
 
-\subsubsection{use-case}
 We will use this feature to check how customers were placing orders.
 
 
 %total spent
 \subsection{total\_spend}
-\subsubsection{description}
 \noindent This feature shows the total cost of the transaction in USD\@.
-\subsubsection{graph representation}
 %import of the histogram
 \begin{figure}[H]
 
@@ -141,14 +133,11 @@ We will use this feature to check how customers were placing orders.
     \label{fig:total_spend_histogram}
 \end{figure}
 
-\subsubsection{use-case}
 \noindent We will use this data and compare it to the order\_channel to check if there exists a relation between the method of ordering and the amount spent.
 
 %num customizations - Zuzia robi
 \subsection{num\_customizations}
-\subsubsection{description}
 \noindent This feature shows the number of modifications made to the order (e.g., extra shots, syrup, milk sub).
-\subsubsection{graph representation}
 %import of the ...
 \begin{figure}[H]
 
@@ -157,14 +146,11 @@ We will use this feature to check how customers were placing orders.
     \caption{Distribution of the number of customizations among customers}
     \label{fig:num_customizations_histogram}
 \end{figure}
-\subsubsection{use-case}
 \noindent We will use this data to check if mobile app users demonstrate higher tendency to customizing their orders.
 
 %customer age group - Mateusz robi
 \subsection{customer\_age\_group}
-\subsubsection{description}
 \noindent This feature shows the age group of the customer.
-\subsubsection{graph representation}
 %import of the bar chart
 \begin{figure}[H]
 
@@ -174,15 +160,12 @@ We will use this feature to check how customers were placing orders.
     \label{fig:customer_age_group_bar}
 \end{figure}
 
-\subsubsection{use-case}
 \noindent A relationship between customer age groups and their ordering behavior will be investigated, notably whether certain age groups prefer eg. specific order channels or spend more money.
 
 
 %fulfillment time - Oliwier robi
 \subsection{fulfillment\_time\_min}
-\subsubsection{description}
 \noindent This feature measures the time (in minutes) from the moment the order is placed until it is ready for the customer. It is a key metric for operational efficiency.
-\subsubsection{graph representation}
 % import of the bar chart for fulfillment time
 \begin{figure}[H]
 
@@ -192,7 +175,6 @@ We will use this feature to check how customers were placing orders.
     \label{fig:fulfillment_time_histogram}
 \end{figure}
 
-\subsubsection{use-case}
 \noindent We will analyze this attribute to determine how the complexity of an order (number of customizations) affects service speed. This helps identify whether encouraging modifications leads to operational bottlenecks.
 
 \chapter{Calculation of descriptive statistics}
