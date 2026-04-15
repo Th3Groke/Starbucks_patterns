@@ -119,6 +119,35 @@ In Figure \ref{fig:order_channel_pie} we can see graphical representation of ord
 
 We will use this feature to check how customers were placing orders.
 
+%customer age group - Mateusz robi
+\subsection{customer\_age\_group}
+\noindent This feature shows the age group of the customer. \\
+In Figure \ref{fig:customer_age_group_bar} we can see graphical representation of the age group of customers.
+%import of the bar chart
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
+    \caption{Distribution of customer age groups}
+    \label{fig:customer_age_group_bar}
+\end{figure}
+
+\noindent A relationship between customer age groups and their ordering behavior will be investigated, notably whether certain age groups prefer eg. specific order channels or spend more money.
+
+%num customizations - Zuzia robi
+\subsection{num\_customizations}
+\noindent This feature shows the number of modifications made to the order (e.g., extra shots, syrup, milk sub). \\
+In Figure \ref{fig:num_customizations_histogram} we can see graphical representation of the number of customizations.
+%import of the ...
+\begin{figure}[H]
+
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
+    \caption{Distribution of the number of customizations among customers}
+    \label{fig:num_customizations_histogram}
+\end{figure}
+\noindent We will use this data to check if mobile app users demonstrate higher tendency to customizing their orders.
+
 
 %total spent
 \subsection{total\_spend}
@@ -135,34 +164,7 @@ In Figure \ref{fig:total_spend_histogram} we can see graphical representation of
 
 \noindent We will use this data and compare it to the order\_channel to check if there exists a relation between the method of ordering and the amount spent.
 
-%num customizations - Zuzia robi
-\subsection{num\_customizations}
-\noindent This feature shows the number of modifications made to the order (e.g., extra shots, syrup, milk sub). \\
-In Figure \ref{fig:num_customizations_histogram} we can see graphical representation of the number of customizations.
-%import of the ...
-\begin{figure}[H]
 
-    \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
-    \caption{Distribution of the number of customizations among customers}
-    \label{fig:num_customizations_histogram}
-\end{figure}
-\noindent We will use this data to check if mobile app users demonstrate higher tendency to customizing their orders.
-
-%customer age group - Mateusz robi
-\subsection{customer\_age\_group}
-\noindent This feature shows the age group of the customer. \\
-In Figure \ref{fig:customer_age_group_bar} we can see graphical representation of the age group of customers.
-%import of the bar chart
-\begin{figure}[H]
-
-    \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
-    \caption{Distribution of customer age groups}
-    \label{fig:customer_age_group_bar}
-\end{figure}
-
-\noindent A relationship between customer age groups and their ordering behavior will be investigated, notably whether certain age groups prefer eg. specific order channels or spend more money.
 
 
 %fulfillment time - Oliwier robi
@@ -199,26 +201,21 @@ The following subsection details the primary descriptive statistics for each sel
     \caption{Descriptive statistics for order\_channel}
     \label{tab:desc_order_channel}
 \end{table}
-
-\subsection{total\_spend}
-\noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
+\subsection{customer\_age\_group}
+\noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
 
 \begin{table}[H]
 
     \centering
     \begin{tabular}{|l|l|l|}
         \hline
-        Measure of a central tendency & Obtained result  \\ \hline
-        mean value                    & 14.8667708       \\ \hline
-        median value                  & 14.17            \\ \hline
-        mode value                    & 12.1453342509566 \\ \hline
-        range                         & 3.51 - 40.31     \\ \hline
-        standard deviation            & 5.50680009558536 \\ \hline
-        0.25 Quartile                 & 10.8375          \\ \hline
-        0.75 Quartile                 & 18.18            \\ \hline
+        Measure of a central tendency & Obtained result \\ \hline
+        mode                          & 25-34           \\ \hline
+        cardinality                   & 5               \\ \hline
     \end{tabular}
-    \caption{Descriptive statistics for total\_spend}
-    \label{tab:desc_total_spend}
+
+    \caption{Descriptive statistics for customer\_age\_group}
+    \label{tab:desc_customer_age_group}
 \end{table}
 
 \subsection{num\_customizations}
@@ -241,22 +238,30 @@ The following subsection details the primary descriptive statistics for each sel
     \caption{Descriptive statistics for num\_customizations}
     \label{tab:desc_num_customizations}
 \end{table}
-\subsection{customer\_age\_group}
-\noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
+
+\subsection{total\_spend}
+\noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
 
 \begin{table}[H]
 
     \centering
     \begin{tabular}{|l|l|l|}
         \hline
-        Measure of a central tendency & Obtained result \\ \hline
-        mode                          & 25-34           \\ \hline
-        cardinality                   & 5               \\ \hline
+        Measure of a central tendency & Obtained result  \\ \hline
+        mean value                    & 14.8667708       \\ \hline
+        median value                  & 14.17            \\ \hline
+        mode value                    & 12.1453342509566 \\ \hline
+        range                         & 3.51 - 40.31     \\ \hline
+        standard deviation            & 5.50680009558536 \\ \hline
+        0.25 Quartile                 & 10.8375          \\ \hline
+        0.75 Quartile                 & 18.18            \\ \hline
     \end{tabular}
-
-    \caption{Descriptive statistics for customer\_age\_group}
-    \label{tab:desc_customer_age_group}
+    \caption{Descriptive statistics for total\_spend}
+    \label{tab:desc_total_spend}
 \end{table}
+
+
+
 \subsection{fulfillment\_time\_min}
 \noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences.
 
