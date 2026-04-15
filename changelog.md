@@ -26,3 +26,15 @@
   * skewness and kurtosis
   * calculating Kolmogorov-Smirnov
   * Q-Q plots
+
+## Third meeting - 15 April 2026
+**Report:**
+* Merged Descriptive statistics sections into one chapter
+* Added labels to all fiures and tables in the report
+* removed headings and replaced them with short descriptions
+* changed the order of sections that make more sence
+* Added box-plots to descriptive statistics
+* Added descriptions to every figure.
+
+**Scripts:**
+* Created scripts generating box-plots and exporting them to PDFs
