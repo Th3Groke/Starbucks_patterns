@@ -8,7 +8,7 @@ max_val <- max(my_data$fulfillment_time_min, na.rm = TRUE)
 pdf("Resources/Charts/fulfillment_time_histogram.pdf", width = 7, height = 5)
 
 hist(my_data$fulfillment_time_min,
-     breaks = seq(min_val, max_val, length.out = 31),
+     breaks = seq(min_val, max_val, length.out = 21),
      col = "#00704A",
      border = "white",
      main = "",

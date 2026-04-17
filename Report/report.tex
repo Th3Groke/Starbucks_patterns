@@ -55,7 +55,7 @@
 
 \tableofcontents
 \newpage
-
+%footnote!!
 \chapter{General description of the dataset}
 \noindent The subject of the project is a statistical analysis of the ``Starbucks Customer Ordering Patterns'' dataset. This dataset, which was published on Kaggle, consists of 100 000 real transactions made by Starbucks customers over a two-year period (2024-2025). It allows to analyse customer behavior, focusing on how orders are placed, the financial value of those orders, and the time required for fulfillment. To ensure the methods are adjusted to the dataset, five key features have been isolated to analyze trends in spending, demographic preferences, and operational efficiency.
 
@@ -66,7 +66,7 @@ Below there is a list of all attributes of the dataset.
           \begin{itemize}
               \item customer \_id: unique identifier for each customer (15000 unique profiles),
               \item order\_id: unique transaction id (100 000 orders),
-              \item store\_id: identifier for each store,
+              \item store\_id: identifier for each store.
           \end{itemize}
 \end{itemize}
 \begin{itemize}
@@ -74,7 +74,7 @@ Below there is a list of all attributes of the dataset.
           \begin{itemize}
               \item order\_date: (ranging from 01.2024 to 12.2025),
               \item order\_time,
-              \item day\_of\_week,
+              \item day\_of\_week.
           \end{itemize}
 \end{itemize}
 \begin{itemize}
@@ -93,12 +93,12 @@ Below there is a list of all attributes of the dataset.
               \item drink\_category: (Coffee, Tea, Refresher or Other),
               \item has\_food\_item: (True or False),
               \item order\_ahead: whether the order was placed ahead of time (True or False),
-              \item customer\_satifsaction: rating from 1 to 5 (correlated with fulfillment time and channel),
+              \item customer\_satifsaction: rating from 1 to 5 (correlated with fulfillment time and channel).
 
           \end{itemize}
 \end{itemize}
 
-\pagebreak
+
 
 \section{Summary of selected attributes}
 The following section provides a descriptive summary of the specific attributes selected for this analysis.
@@ -112,7 +112,7 @@ In Figure \ref{fig:order_channel_pie} we can see graphical representation of ord
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
     \caption{Percentage distribution of order channels}
     \label{fig:order_channel_pie}
 \end{figure}
@@ -127,7 +127,7 @@ In Figure \ref{fig:customer_age_group_bar} we can see graphical representation o
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
     \caption{Distribution of customer age groups}
     \label{fig:customer_age_group_bar}
 \end{figure}
@@ -142,7 +142,7 @@ In Figure \ref{fig:num_customizations_histogram} we can see graphical representa
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
     \caption{Distribution of the number of customizations among customers}
     \label{fig:num_customizations_histogram}
 \end{figure}
@@ -157,7 +157,7 @@ In Figure \ref{fig:total_spend_histogram} we can see graphical representation of
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
     \caption{Distribution of total spend among customers}
     \label{fig:total_spend_histogram}
 \end{figure}
@@ -175,7 +175,7 @@ In Figure \ref{fig:fulfillment_time_histogram} we can see graphical representati
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/fulfillment_time_histogram.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/fulfillment_time_histogram.pdf}
     \caption{Distribution of fulfillment time among customers}
     \label{fig:fulfillment_time_histogram}
 \end{figure}
@@ -264,7 +264,7 @@ The following subsection details the primary descriptive statistics for each sel
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/box-plots/total_spend-box.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/total_spend-box.pdf}
     \label{fig:total_spend-box}
     \caption{box-plot presenting distribution of total value of an order}
 \end{figure}
@@ -291,24 +291,24 @@ The following subsection details the primary descriptive statistics for each sel
     \label{tab:desc_fulfillment_time}
 \end{table}
 
-\noindent In graph \ref{fig:fulfillment_time-box} we can see the box-plot presnting fulfillment time characteristics. We can observe a quite large number of outliers, but it should be considered normal in a dataset this big.
+\noindent In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presnting fulfillment time characteristics. We can observe a quite large number of outliers, but it should be considered normal in a dataset this big.
 
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/box-plots/fulfillemnt_time_min-box.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/fulfillemnt_time_min-box.pdf}
     \label{fig:fulfillment_time-box}
     \caption{box-plot presenting distribution of fulfillment time}
 \end{figure}
 
 \subsection{Total\_spend and order\_channel comparison}
-Graph \ref{fig:total_spend-order_channel-box} presents comparison of total\_spend and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
+Figure \ref{fig:total_spend-order_channel-box} presents comparison of total\_spend and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Charts/box-plots/total_spend-order_channel-box.pdf}
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/total_spend-order_channel-box.pdf}
     \label{fig:total_spend-order_channel-box}
     \caption{box-plot comparing total\_spend and order\_channel characteristics}
 \end{figure}
