@@ -260,7 +260,7 @@ The following subsection details the primary descriptive statistics for each sel
     \label{tab:desc_total_spend}
 \end{table}
 
-\noindent Here is the box-plot presenting total\_spend characteristics
+\noindent Here is the box-plot presenting total\_spend characteristics:
 
 \begin{figure}[H]
     \centering
@@ -268,6 +268,8 @@ The following subsection details the primary descriptive statistics for each sel
     \label{fig:total_spend-box}
     \caption{box-plot presenting distribution of total value of an order}
 \end{figure}
+
+\noindent Using the Interquartile Range (IQR) method, we identified that 1.41\% of observations in the total\_spend variable are outliers (1,410 records out of 100,000). These outliers primarily represent unusually high-value transactions that exceed the upper bound of \$29.21.
 
 
 \subsection{fulfillment\_time\_min}
@@ -291,7 +293,7 @@ The following subsection details the primary descriptive statistics for each sel
     \label{tab:desc_fulfillment_time}
 \end{table}
 
-\noindent In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presnting fulfillment time characteristics. We can observe a quite large number of outliers, but it should be considered normal in a dataset this big.
+\noindent In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presenting fulfillment time characteristics.
 
 
 
@@ -301,6 +303,9 @@ The following subsection details the primary descriptive statistics for each sel
     \label{fig:fulfillment_time-box}
     \caption{box-plot presenting distribution of fulfillment time}
 \end{figure}
+
+\noindent Using the Interquartile Range (IQR) method, 0.81\% of observations (811 records) are classified as outliers, which represents a reasonable proportion for a dataset of 100,000 transactions. These outliers represent instances where fulfillment times exceed 8.65 minutes, which should be considered normal in a dataset this big.
+
 
 \subsection{Total\_spend and order\_channel comparison}
 Figure \ref{fig:total_spend-order_channel-box} presents comparison of total\_spend and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
@@ -335,7 +340,7 @@ In Figure \ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount 
     \caption{Normal Q-Q Plot for total\_spend}
     \label{fig:total_spend_qq}
 \end{figure}
-As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum.
+As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum. These outliers comprise 1.41\% of the dataset and represent unusual purchasing behaviors at both ends of the spending range.
 \subsection{fulfillment\_time\_min}
 In Figure \ref{fig:fulfillment_time_qq} we can see the Q-Q Plot for the fulfillment time.
 \begin{figure}[H]
@@ -418,7 +423,7 @@ Similarly the p-value for  fulfillment\_time\_min equals $2.2\cdot10^{-16}$.
 Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
 \section{Conclusion on Normality}
 Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both total\_spend and fulfillment\_time\_min deviates from strict normality.
-For total\_spend, this deviation is driven by a small number of extreme high-value purchases that stretch the data upward. For fulfillment\_time\_min, the data is highly symmetrical but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
+For total\_spend, this deviation is driven by a small number of extreme high-value purchases (1.41\% outliers) that stretch the data upward. For fulfillment\_time\_min, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
 \chapter{Expected relationships between the attributes}
 \chapter{Additional analyses aka something new}
 \chapter{Results and conclusions}
