@@ -424,6 +424,70 @@ Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding
 \section{Conclusion on Normality}
 Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both total\_spend and fulfillment\_time\_min deviates from strict normality.
 For total\_spend, this deviation is driven by a small number of extreme high-value purchases (1.41\% outliers) that stretch the data upward. For fulfillment\_time\_min, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
+
+\chapter{Attempts to find normality in smaller groups}
+
+\section{Comparison of fulfillment time of preparing espresso and brewd coffee}
+
+To investigate if product complexity affects service consistency, the \texttt{fulfillment\_time\_min} variable was segmented into two groups: Single Espresso and Single Brewed Coffee. Table~\ref{tab:ks_small_groups_comparison} summarizes the Kolmogorov-Smirnov (K-S) test results.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|c|c|l}
+        \textbf{Order Type} & \textbf{K-S Statistic ($D$)} & \textbf{$p$-value} & \textbf{Result ($\alpha=0.05$)} \\ \hline
+        Single Espresso & 0.062548 & 0.44700 & Fail to Reject $H_0$ (Normal) \\
+        Brewed Coffee   & 0.10084 & 0.03949 & Reject $H_0$ (Non-Normal) \\
+    \end{tabular}
+    \caption{Normality testing results for specific product categories.}
+    \label{tab:ks_small_groups_comparison}
+\end{table}
+
+To better show how the normality looks figures \ref{fig:brewed_coffee_dist} and \ref{fig:espresso_dist} show the graphical representation of the data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/normality_standard_brewed_coffee.pdf}
+    \caption{Histogram and Q-Q plot showing the distribution of the fulfillment time of brewed coffee orders}
+    \label{fig:brewed_coffee_dist}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/normality_standard_espresso.pdf}
+    \caption{Histogram and Q-Q plot showing the data distribution of fulfillment time of espresso orders}
+    \label{fig:espresso_dist}
+\end{figure}
+
+Based on the tests and the data we came to the conclusion that the process of making a standard espresso is more automated and the time of making brewed coffee is less standarized and may vary more between orders.
+
+\section{Average fulfilment time between restaurants}
+
+Here we are testing the normality for the averaged waiting time for the order between restaurants.
+Using Kolmogorov-Smirnov test we recived the following results:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c}
+        \textbf{D-value} & \textbf{P-value} & \textbf{Result} \\
+        \hline
+        D = 0.021831 & p-value = 0.971 & Fail to reject $H_0$ (Normal)\\
+        
+    \end{tabular}
+\end{table}
+
+Here are also the graphs showing the graphical representation of the avaraged data distribution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/normality_store_averages.pdf}
+    \caption{Histogram and Q-Q plot of average fulfillment time between stores}
+\end{figure}
+
+
+Results of this test shows that this data follows a normal distribution and proves the central limit theorem which states that, even if single elements of the data would not follow the normal distribution, the process of averaging fulfillment times across the stores causes the resulting distribution to converge toward normality.
+
+
+
 \chapter{Expected relationships between the attributes}
 \chapter{Additional analyses aka something new}
 \chapter{Results and conclusions}
