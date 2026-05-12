@@ -5,7 +5,7 @@ my_data <- read_csv("./starbucks_customer_ordering_patterns.csv")
 min_val <- min(my_data$fulfillment_time_min, na.rm = TRUE)
 max_val <- max(my_data$fulfillment_time_min, na.rm = TRUE)
 
-pdf("Resources/Charts/fulfillment_time_histogram.pdf", width = 7, height = 5)
+pdf("Resources/Charts/fulfillment_time_histogram.pdf", width = 7, height = 4)
 
 hist(my_data$fulfillment_time_min,
      breaks = seq(min_val, max_val, length.out = 21),
