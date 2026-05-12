@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{datetime}
+\usepackage{caption}
 \newcommand{\Logo}{
     \begin{figure}[H]
         \centering
@@ -112,7 +113,7 @@ In Figure \ref{fig:order_channel_pie} we can see graphical representation of ord
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.5\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
+    \includegraphics[width=0.55\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
     \caption{Percentage distribution of order channels}
     \label{fig:order_channel_pie}
 \end{figure}
@@ -142,7 +143,7 @@ In Figure \ref{fig:num_customizations_histogram} we can see graphical representa
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width=0.5\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
+    \includegraphics[width=0.45\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
     \caption{Distribution of the number of customizations among customers}
     \label{fig:num_customizations_histogram}
 \end{figure}
@@ -242,70 +243,69 @@ The following subsection details the primary descriptive statistics for each sel
 \subsection{total\_spend}
 \noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
 
-\begin{table}[H]
-
-    \centering
-    \begin{tabular}{|l|l|l|}
-        \hline
-        Measure of a central tendency & Obtained result  \\ \hline
-        mean value                    & 14.8667708       \\ \hline
-        median value                  & 14.17            \\ \hline
-        mode value                    & 12.1453342509566 \\ \hline
-        range                         & 3.51 - 40.31     \\ \hline
-        standard deviation            & 5.50680009558536 \\ \hline
-        0.25 Quartile                 & 10.8375          \\ \hline
-        0.75 Quartile                 & 18.18            \\ \hline
-    \end{tabular}
-    \caption{Descriptive statistics for total\_spend}
-    \label{tab:desc_total_spend}
-\end{table}
-
-\noindent Here is the box-plot presenting total\_spend characteristics:
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/total_spend-box.pdf}
-    \label{fig:total_spend-box}
-    \caption{box-plot presenting distribution of total value of an order}
+    \begin{minipage}[c]{0.32\textwidth}
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result  \\ \hline
+            mean value                    & 14.8667708       \\ \hline
+            median value                  & 14.17            \\ \hline
+            mode value                    & 12.1453342509566 \\ \hline
+            range                         & 3.51 - 40.31     \\ \hline
+            standard deviation            & 5.50680009558536 \\ \hline
+            0.25 Quartile                 & 10.8375          \\ \hline
+            0.75 Quartile                 & 18.18            \\ \hline
+        \end{tabular}
+        \captionof{table}{Descriptive statistics for total\_spend}
+        \label{tab:desc_total_spend}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../Resources/Charts/box-plots/total_spend-box.pdf}
+        \caption{Box-plot presenting distribution of total value of an order}
+        \label{fig:total_spend-box}
+    \end{minipage}
 \end{figure}
 
 \noindent Using the Interquartile Range (IQR) method, we identified that 1.41\% of observations in the total\_spend variable are outliers (1,410 records out of 100,000). These outliers primarily represent unusually high-value transactions that exceed the upper bound of \$29.21.
-
-
 \subsection{fulfillment\_time\_min}
-\noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences.
+\noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences. In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presenting these fulfillment time characteristics.
 
-\begin{table}[H]
-
+\vspace{1em}
+\noindent
+\begin{minipage}{\textwidth}
     \centering
-    \begin{tabular}{|l|l|l|}
-        \hline
-        Measure of a central tendency & Obtained result  \\ \hline
-        mean value                    & 4.54608          \\ \hline
-        median value                  & 4.4              \\ \hline
-        mode value                    & 4.31807337490211 \\ \hline
-        range                         & 1 - 11.2         \\ \hline
-        standard deviation            & 1.55026948204314 \\ \hline
-        0.25 Quartile                 & 3.4              \\ \hline
-        0.75 Quartile                 & 5.5              \\ \hline
-    \end{tabular}
-    \caption{Descriptive statistics for fulfillment\_time\_min}
-    \label{tab:desc_fulfillment_time}
-\end{table}
-
-\noindent In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presenting fulfillment time characteristics.
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/fulfillemnt_time_min-box.pdf}
-    \label{fig:fulfillment_time-box}
-    \caption{box-plot presenting distribution of fulfillment time}
-\end{figure}
+    % Left side: Table
+    \begin{minipage}[c]{0.55\textwidth}
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline
+            Measure of a central tendency & Obtained result  \\ \hline
+            mean value                    & 4.54608          \\ \hline
+            median value                  & 4.4              \\ \hline
+            mode value                    & 4.31807337490211 \\ \hline
+            range                         & 1 - 11.2         \\ \hline
+            standard deviation            & 1.55026948204314 \\ \hline
+            0.25 Quartile                 & 3.4              \\ \hline
+            0.75 Quartile                 & 5.5              \\ \hline
+        \end{tabular}
+        \captionof{table}{Descriptive statistics for fulfillment\_time\_min}
+        \label{tab:desc_fulfillment_time}
+    \end{minipage}\hfill
+    % Right side: Image
+    \begin{minipage}[c]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../Resources/Charts/box-plots/fulfillment_time_min-box.pdf}
+        \captionof{figure}{Box-plot presenting distribution of fulfillment time}
+        \label{fig:fulfillment_time-box}
+    \end{minipage}
+\end{minipage}
+\vspace{1em}
 
 \noindent Using the Interquartile Range (IQR) method, 0.81\% of observations (811 records) are classified as outliers, which represents a reasonable proportion for a dataset of 100,000 transactions. These outliers represent instances where fulfillment times exceed 8.65 minutes, which should be considered normal in a dataset this big.
-
+\newpage
 
 \subsection{Total\_spend and order\_channel comparison}
 Figure \ref{fig:total_spend-order_channel-box} presents comparison of total\_spend and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
