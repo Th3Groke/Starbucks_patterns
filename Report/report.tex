@@ -420,6 +420,62 @@ In Table \ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis resu
 \end{table}
 Similarly the p-value for  fulfillment\_time\_min equals $2.2\cdot10^{-16}$.
 Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
+
+\section{Outliers and their impact on normality}
+\subsection{total\_spend}
+Outliers can significantly distort the shape of a distribution, leading to deviations from normality. In the case of total\_spend, the presence of 1.41\% outliers (1,410 records) that represent unusually high-value transactions may have a disproportionate influence on the overall distribution. \\
+Below, the same procedure was conducted to assess the impact of these outliers on the normality of the total\_spend variable:
+
+\subsubsection{Q-Q plot}
+In Figure \ref{fig:total_spend_without_outliers_qq} we can see the Q-Q Plot for the total amount spent.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Resources/Charts/Normality_testing/no-outliers/total_spend_without_outliers_Q-Q.pdf}
+    \caption{Normal Q-Q Plot for total\_spend without outliers}
+    \label{fig:total_spend_without_outliers_qq}
+\end{figure}
+
+\subsubsection{Analysis of Skewness and Kurtosis}
+In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewness and Kurtosis results for total amount spent.
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Measure  & Obtained result  \\ \hline
+        Skewness & 0.439109484304028 \\ \hline
+        Kurtosis & 2.70132167629071 \\ \hline
+    \end{tabular}
+
+    
+    \caption{Skewness and Kurtosis results for total\_spend without outliers}
+    \label{tab:skew_kurt_total_spend_without_outliers}
+\end{table}
+
+\subsubsection{Kolmogorov-Smirnov test}
+In Table \ref{tab:ks_total_spend} we can see the K-S test results for total amount spent.
+\begin{table}[H]
+
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Measure              & Obtained result    \\ \hline
+        D (maximum distance) & 0.043939           \\ \hline
+        p-value              & $2.2\cdot10^{-16}$ \\ \hline
+    \end{tabular}
+
+    \caption{Kolmogorov-Smirnov test results for total\_spend}
+    \label{tab:ks_total_spend}
+\end{table}
+
+\noindent Similarly to the version containing outliers, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
+
+\subsubsection{Conclusion on outliers' impact on normality}
+\noindent Normality tests were repeated after removing the outliers, and the results still indicated a deviation from normality, albeit less pronounced. This suggests that while outliers contribute to the non-normality of total\_spend, there are underlying distributional characteristics that also deviate from normality.
+
+% \noindent When considering the impact of outliers, they contribute to the right skewness and heavier tails observed in the distribution. These outliers pull the mean upwards and create a long tail on the right side of the distribution, which is reflected in both the skewness and kurtosis values.
+
+
 \section{Conclusion on Normality}
 Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both total\_spend and fulfillment\_time\_min deviates from strict normality.
 For total\_spend, this deviation is driven by a small number of extreme high-value purchases (1.41\% outliers) that stretch the data upward. For fulfillment\_time\_min, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
