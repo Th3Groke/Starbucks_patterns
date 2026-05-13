@@ -94,7 +94,7 @@ Below there is a list of all attributes of the dataset.
               \item drink\_category: (Coffee, Tea, Refresher or Other),
               \item has\_food\_item: (True or False),
               \item order\_ahead: whether the order was placed ahead of time (True or False),
-              \item customer\_satifsaction: rating from 1 to 5 (correlated with fulfillment time and channel).
+              \item customer\_satisfaction: rating from 1 to 5 (correlated with fulfillment time and channel).
 
           \end{itemize}
 \end{itemize}
@@ -590,7 +590,49 @@ To identify exactly which groups differed, a post-hoc pairwise Wilcoxon rank sum
     \includegraphics[width=0.55\textwidth]{../Resources/Hypothesis_testing/Age_vs_Customizations_Plot.pdf}
     \caption{Distribution of number of customizations across customer age groups}
     \label{fig:age_customizations}
+
+    
+\end{figure}
+\section{Analysis of customer satisfaction across order channels}
+Secondly, we wanted to investigate whether a relationship exists between the customer's chosen ordering method and their satisfaction ratings. This analysis is crucial to evaluate the effectiveness of digital channels in the Starbucks ecosystem.
+
+\subsection{Formulation of the Hypothesis}
+\begin{itemize}
+    \item $\mathbf{H_0}$: The distribution of customer satisfaction ratings is identical across all ordering channels.
+    \item $\mathbf{H_1}$: At least one ordering channel differs significantly from the others in terms of satisfaction ratings.
+\end{itemize}
+
+\subsection{Methodology}
+To determine if satisfaction levels vary by ordering method, we analyzed the relationship between the \texttt{order\_channel} and \texttt{customer\_satisfaction} attributes. Because satisfaction is measured on a discrete ordinal scale (1-5) and the dataset exhibits non-normal distributions, we utilized the non-parametric \textbf{Kruskal-Wallis H test}. A standard significance level of $\alpha = 0.05$ was applied.
+
+\subsection{Results}
+The Kruskal-Wallis test revealed a statistically significant difference in satisfaction ratings across the different channels ($\chi^2 = 2073.6$, $p < 0.001$). Therefore, we reject the null hypothesis ($\mathbf{H_0}$).
+
+Table 5.2 represents the descriptive statistics for customer satisfaction by ordering channel.
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Order Channel} & \textbf{Mean Satisfaction} & \textbf{Median} & \textbf{Std. Deviation} \\ \hline
+        Mobile App             & 3.86                       & 4               & 1.14                    \\ \hline
+        In-Store Cashier       & 3.70                       & 4               & 1.10                    \\ \hline
+        Kiosk                  & 3.60                       & 4               & 1.07                    \\ \hline
+        Drive-Thru             & 3.44                       & 4               & 1.29                    \\ \hline
+    \end{tabular}
+    \caption{Descriptive statistics for customer satisfaction by channel}
+    \label{tab:satisfaction_stats}
+\end{table}
+
+As observed in Table \ref{tab:satisfaction_stats}, the \textbf{Mobile App} users demonstrate the highest levels of satisfaction. To better visualize these differences, Figure \ref{fig:satisfaction_boxplot} presents the distribution of ratings.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{../Resources/Charts/box-plots/satisfaction_channels_boxplot.pdf}
+    \caption{Distribution of satisfaction ratings across order channels}
+    \label{fig:satisfaction_boxplot}
 \end{figure}
 \chapter{Additional analyses aka something new}
+
 \chapter{Results and conclusions}
 \end{document}
