@@ -111,7 +111,6 @@ This feature lists which method of ordering was used by the customer while
 placing order. Available options were Mobile App, Drive-Thru, In-Store Cashier, Kiosk. \\
 In Figure \ref{fig:order_channel_pie} we can see graphical representation of order channels.
 \begin{figure}[H]
-
     \centering
     \includegraphics[width=0.55\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
     \caption{Percentage distribution of order channels}
@@ -435,8 +434,8 @@ To investigate if product complexity affects service consistency, the \texttt{fu
     \centering
     \begin{tabular}{l|c|c|l}
         \textbf{Order Type} & \textbf{K-S Statistic ($D$)} & \textbf{$p$-value} & \textbf{Result ($\alpha=0.05$)} \\ \hline
-        Single Espresso & 0.062548 & 0.44700 & Fail to Reject $H_0$ (Normal) \\
-        Brewed Coffee   & 0.10084 & 0.03949 & Reject $H_0$ (Non-Normal) \\
+        Single Espresso     & 0.062548                     & 0.44700            & Fail to Reject $H_0$ (Normal)   \\
+        Brewed Coffee       & 0.10084                      & 0.03949            & Reject $H_0$ (Non-Normal)       \\
     \end{tabular}
     \caption{Normality testing results for specific product categories.}
     \label{tab:ks_small_groups_comparison}
@@ -474,10 +473,9 @@ Using Kolmogorov-Smirnov test we recived the following results:
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c|c}
-        \textbf{D-value} & \textbf{P-value} & \textbf{Result} \\
+        \textbf{D-value} & \textbf{P-value} & \textbf{Result}               \\
         \hline
-        D = 0.021831 & p-value = 0.971 & Fail to reject $H_0$ (Normal)\\
-        
+        D = 0.021831     & p-value = 0.971  & Fail to reject $H_0$ (Normal) \\
     \end{tabular}
 \end{table}
 
@@ -492,9 +490,45 @@ Here are also the graphs showing the graphical representation of the avaraged da
 
 Results of this test shows that this data follows a normal distribution and proves the central limit theorem which states that, even if single elements of the data would not follow the normal distribution, the process of averaging fulfillment times across the stores causes the resulting distribution to converge toward normality.
 
-
-
 \chapter{Expected relationships between the attributes}
+\section{Analysis of customization patterns across age groups}
+Firstly, we wanted to investigate whether a relationship exists between a customer's age group and their tendency to customize orders.
+\subsection{Formulation of the Hypothesis}
+\begin{itemize}
+    \item $H_0$: The distribution of the number of customizations is identical across all customer age groups.
+    \item $H_1$: At least one customer age group differs significantly from the others in their number of customizations.
+\end{itemize}
+\subsection{Methodology}
+To determine if drink customization habits vary by demographic, we analyzed the relationship between the \texttt{customer\_age\_group} and \texttt{num\_customizations} attributes. Because the number of customizations is a discrete numerical variable with a heavily right-skewed distribution, we utilized the non-parametric Kruskal-Wallis H test. A standard significance level of $\alpha = 0.05$ was applied.
+\subsection{Results}
+A Kruskal-Wallis H test was conducted to determine if there were differences in the number of drink customizations between five customer age groups: 18-24, 25-34, 35-44, 45-54, and 55+. The test revealed a statistically significant difference in customization patterns across the age demographics ($\chi^2 = 1338.6$, $p < 0.001$). Therefore, we reject the null hypothesis ($H_0$).
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l c c c c}
+        \hline
+        \textbf{Age Group} & \textbf{18-24} & \textbf{25-34} & \textbf{35-44} & \textbf{45-54} \\
+        \hline
+        \textbf{25-34}     & 0.84           & --             & --             & --             \\
+        \textbf{35-44}     & $<0.001$       & $<0.001$       & --             & --             \\
+        \textbf{45-54}     & $<0.001$       & $<0.001$       & 0.41           & --             \\
+        \textbf{55+}       & $<0.001$       & $<0.001$       & $<0.001$       & $<0.001$       \\
+        \hline
+    \end{tabular}
+    \caption{Post-hoc pairwise Wilcoxon rank sum test $p$-values (Bonferroni corrected)}
+    \label{tab:posthoc_customizations}
+\end{table}
+
+To identify exactly which groups differed, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table \ref{tab:posthoc_customizations}, indicated that customization habits are clustered into distinct generational behaviors. There was no statistically significant difference in the number of customizations between the 18-24 and 25-34 age groups ($p = 0.84$), nor between the 35-44 and 45-54 age groups ($p = 0.41$). However, differences between all other age group combinations were highly significant ($p < 0.001$). As seen in Figure \ref{fig:age_customizations}, the younger demographic brackets tend to request a higher volume of customizations compared to older demographics.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{../Resources/Hypothesis_testing/Age_vs_Customizations_Plot.pdf}
+    \caption{Distribution of number of customizations across customer age groups}
+    \label{fig:age_customizations}
+\end{figure}
 \chapter{Additional analyses aka something new}
 \chapter{Results and conclusions}
 \end{document}
