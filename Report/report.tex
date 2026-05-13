@@ -313,8 +313,8 @@ Figure \ref{fig:total_spend-order_channel-box} presents comparison of total\_spe
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/total_spend-order_channel-box.pdf}
-    \label{fig:total_spend-order_channel-box}
     \caption{box-plot comparing total\_spend and order\_channel characteristics}
+    \label{fig:total_spend-order_channel-box}
 \end{figure}
 
 
@@ -423,7 +423,7 @@ Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding
 
 \section{Outliers and their impact on normality}
 \subsection{total\_spend}
-Outliers can significantly distort the shape of a distribution, leading to deviations from normality. In the case of total\_spend, the presence of 1.41\% outliers (1,410 records) that represent unusually high-value transactions may have a disproportionate influence on the overall distribution. \\
+Outliers can significantly distort the shape of a distribution, leading to deviations from normality. In the case of total\_spend, the presence of 1.41\% outliers (1,410 records) represents unusually high-value transactions that may have an influence on the distribution. \\
 Below, the same procedure was conducted to assess the impact of these outliers on the normality of the total\_spend variable:
 
 \subsubsection{Q-Q plot}
@@ -434,6 +434,7 @@ In Figure \ref{fig:total_spend_without_outliers_qq} we can see the Q-Q Plot for 
     \caption{Normal Q-Q Plot for total\_spend without outliers}
     \label{fig:total_spend_without_outliers_qq}
 \end{figure}
+\noindent A difference can be observed in the Q-Q plot for total\_spend after removing outliers. The data points now align more closely with the reference line, particularly in the upper quantiles, indicating a reduction in skewness and a distribution that is closer to normal.
 
 \subsubsection{Analysis of Skewness and Kurtosis}
 In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewness and Kurtosis results for total amount spent.
@@ -452,12 +453,14 @@ In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewnes
     \label{tab:skew_kurt_total_spend_without_outliers}
 \end{table}
 
+\noindent Lower values of Skewness (0.44) and Kurtosis (2.70) after removing outliers indicate a more symmetrical distribution with lighter tails, suggesting that the outliers were contributing to the right skewness and heavier tails observed in the original distribution.
+
 \subsubsection{Kolmogorov-Smirnov test}
 In Table \ref{tab:ks_total_spend} we can see the K-S test results for total amount spent.
 \begin{table}[H]
 
     \centering
-    \begin{tabular}{|l|l|l|}
+    \begin{tabular}{|l|l|}
         \hline
         Measure              & Obtained result    \\ \hline
         D (maximum distance) & 0.043939           \\ \hline
@@ -478,13 +481,16 @@ In Table \ref{tab:ks_total_spend} we can see the K-S test results for total amou
 
 \section{Conclusion on Normality}
 Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both total\_spend and fulfillment\_time\_min deviates from strict normality.
-For total\_spend, this deviation is driven by a small number of extreme high-value purchases (1.41\% outliers) that stretch the data upward. For fulfillment\_time\_min, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
+For total\_spend, this deviation is driven by a small number of high-value purchases that stretch the data upward. However, eliminating these outliers still results in a distribution that deviates from normality.
+For fulfillment\_time\_min, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
 
 \chapter{Attempts to find normality in smaller groups}
 
-\section{Comparison of fulfillment time of preparing espresso and brewd coffee}
+\section{Comparison of fulfillment time of preparing espresso and brewed coffee}
 
-To investigate if product complexity affects service consistency, the \texttt{fulfillment\_time\_min} variable was segmented into two groups: Single Espresso and Single Brewed Coffee. Table~\ref{tab:ks_small_groups_comparison} summarizes the Kolmogorov-Smirnov (K-S) test results.
+To investigate if product complexity affects service consistency, the \texttt{fulfillment\_time\_min} variable was segmented into two groups: Single Espresso and Single Brewed Coffee.
+\newline
+Table~\ref{tab:ks_small_groups_comparison} summarizes the Kolmogorov-Smirnov (K-S) test results.
 
 \begin{table}[h]
     \centering
@@ -501,7 +507,7 @@ To investigate if product complexity affects service consistency, the \texttt{fu
 
 
 
-\noindent To better show how the normality looks figures \ref{fig:brewed_coffee_dist} and \ref{fig:espresso_dist} show the graphical representation of the data.
+\noindent To better visualize the normality, figures \ref{fig:brewed_coffee_dist} and \ref{fig:espresso_dist} show the graphical representation of the data.
 
 \begin{figure}[H]
     \centering
@@ -517,14 +523,14 @@ To investigate if product complexity affects service consistency, the \texttt{fu
     \label{fig:espresso_dist}
 \end{figure}
 
-\noindent Even though the Single espresso category didn't officially pass the test with p-value equal 0.447, we can observe a slight normality.\\
+\noindent Although the single espresso category didn't officially pass the test with p-value equal 0.447, we can observe a slight normality.\\
 
-\noindent Based on the tests and the data we came to the conclusion that the process of making a standard espresso is more automated and the time of making brewed coffee is less standarized and may vary more between orders.
+\noindent Based on the tests and the data, we came to the conclusion that the process of making a standard espresso is more automated and the time of making brewed coffee is less standarized and may vary more between orders.
 
 \section{Average fulfilment time between restaurants}
 
-Here we are testing the normality for the averaged waiting time for the order between restaurants.
-Using Kolmogorov-Smirnov test we recived the following results:
+Below, the normality of the averaged waiting time for the order between restaurants was tested.
+Using Kolmogorov-Smirnov test we received the following results:
 
 \begin{table}[H]
     \centering
@@ -535,7 +541,7 @@ Using Kolmogorov-Smirnov test we recived the following results:
     \end{tabular}
 \end{table}
 
-Here are also the graphs showing the graphical representation of the avaraged data distribution.
+\noindent A graphical representation of the averaged data distribution is shown below:
 
 \begin{figure}[H]
     \centering
@@ -544,7 +550,7 @@ Here are also the graphs showing the graphical representation of the avaraged da
 \end{figure}
 
 
-Results of this test shows that this data follows a normal distribution and proves the central limit theorem which states that, even if single elements of the data would not follow the normal distribution, the process of averaging fulfillment times across the stores causes the resulting distribution to converge toward normality.
+\noindent Results of this test show that the data follows a normal distribution and proves the central limit theorem; even if single elements of the data would not follow the normal distribution, the process of averaging fulfillment times across the stores causes the resulting distribution to converge toward normality.
 
 \chapter{Expected relationships between the attributes}
 \section{Analysis of customization patterns across age groups}
