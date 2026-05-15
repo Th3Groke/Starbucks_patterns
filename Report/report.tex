@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} 
 \usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{datetime}
@@ -34,9 +35,8 @@
     \vspace{0.5in}
 
     \large
-    \textbf{Analysis of the ``Digital Venti Effect''} \\
+    \textbf{Analysis of starbucks orders in 2024/2025}\\
     \vspace{1.5in}
-
     % --- Author Section ---
     \textbf{Prepared by:} \\
     \vspace{0.2in}
@@ -632,6 +632,46 @@ As observed in Table \ref{tab:satisfaction_stats}, the \textbf{Mobile App} users
     \caption{Distribution of satisfaction ratings across order channels}
     \label{fig:satisfaction_boxplot}
 \end{figure}
+
+\section{Do Rewards Members Spend More Than Non-Members?}
+Starbucks offers a rewards program to incentivize customer loyalty. In this section, we analyze whether enrollment in this program correlates with higher transaction values. Given that the \texttt{total\_spend} variable was previously found to be non-normally distributed, we utilize the median as a robust measure of central tendency and the Mann-Whitney U test for hypothesis testing.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \multicolumn{1}{|c|}{\textbf{Group}} & \textbf{Median Spend (USD)} \\
+        \hline
+        Rewards Members & 15.12 \\
+        Non-Rewards Members & 13.40 \\
+        \hline
+    \end{tabular}
+    \caption{Comparison of median spending between customer groups.}
+    \label{tab:median_spend}
+\end{table}
+
+\subsection{Hypothesis Formulation}
+We test the following hypotheses at a significance level of $\alpha = 0.05$:
+\begin{itemize}
+    \item $H_0$: The distribution of total spend is the same for both groups.
+    \item $H_1$: The distribution of total spend differs significantly between the two groups.
+\end{itemize}
+
+\subsection{Methodology and Results}
+To evaluate the statistical significance of the \$1.72 difference in medians, a Mann-Whitney U test was performed. This non-parametric test is appropriate given the skewness of the spending 3data.
+
+The test yielded the following results:
+\begin{itemize}
+    \item \textbf{Test Statistic ($W$):} 1033353000
+    \item \textbf{$p$-value:} $< 2.2e-16$
+\end{itemize}
+
+\subsection{Interpretation}
+Since the $p$-value is significantly lower than $\alpha = 0.05$, we reject the null hypothesis $H_0$. This provides strong evidence that the difference in spending patterns is statistically significant. The results confirm that members of the rewards program tend to have higher transaction values than non-members.
+
+
+
+
 \chapter{Additional analyses aka something new}
 
 \chapter{Results and conclusions}
