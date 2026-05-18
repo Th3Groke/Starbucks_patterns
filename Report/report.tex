@@ -523,14 +523,13 @@ Table~\ref{tab:ks_small_groups_comparison} summarizes the Kolmogorov-Smirnov (K-
     \label{fig:espresso_dist}
 \end{figure}
 
-\noindent Although the single espresso category didn't officially pass the test with p-value equal 0.447, we can observe a slight normality.\\
+\noindent Although the brewed coffee category didn't officially pass the test with p-value equal to 0.039, we can observe a slight normality.
 
 \noindent Based on the tests and the data, we came to the conclusion that the process of making a standard espresso is more automated and the time of making brewed coffee is less standarized and may vary more between orders.
 
 \section{Average fulfilment time between restaurants}
-
-Below, the normality of the averaged waiting time for the order between restaurants was tested.
-Using Kolmogorov-Smirnov test we received the following results:
+%mam nadzieje ze to juz jest wystarczajacy opis
+This dataset contains operational metrics from multiple restaurants distributed across various locations. To evaluate the data, we calculated the mean fulfillment time for each individual restaurant. A formal Kolmogorov-Smirnov test was then conducted on these store-level averages to assess whether they follow a normal distribution. The test yielded the following results:
 
 \begin{table}[H]
     \centering
@@ -582,16 +581,13 @@ A Kruskal-Wallis H test was conducted to determine if there were differences in 
     \label{tab:posthoc_customizations}
 \end{table}
 
-To identify exactly which groups differed, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table \ref{tab:posthoc_customizations}, indicated that customization habits are clustered into distinct generational behaviors. There was no statistically significant difference in the number of customizations between the 18-24 and 25-34 age groups ($p = 0.84$), nor between the 35-44 and 45-54 age groups ($p = 0.41$). However, differences between all other age group combinations were highly significant ($p < 0.001$). As seen in Figure \ref{fig:age_customizations}, the younger demographic brackets tend to request a higher volume of customizations compared to older demographics.
-
+\noindent To identify exactly which groups differed, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table \ref{tab:posthoc_customizations}, indicated that customization habits are clustered into distinct generational behaviors. There was no statistically significant difference in the number of customizations between the 18-24 and 25-34 age groups ($p = 0.84$), nor between the 35-44 and 45-54 age groups ($p = 0.41$). However, differences between all other age group combinations were highly significant ($p < 0.001$). The visual representation of these differences is provided in Figure \ref{fig:age_customizations}. The boxplot highlights a clear generational divide: while younger customers (18-34) frequently request multiple customizations, the median number of modifications decreases significantly for groups aged 35 and above. This visualization confirms that customization is a defining characteristic of the ordering patterns for younger demographics.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{../Resources/Hypothesis_testing/Age_vs_Customizations_Plot.pdf}
-    \caption{Distribution of number of customizations across customer age groups}
+    \includegraphics[width=0.65\textwidth]{../Resources/Hypothesis_testing/Age_vs_Customizations_Plot.pdf}
+    \caption{Boxplot showing the distribution of order customizations by age group, illustrating higher customization frequency among younger customers.}
     \label{fig:age_customizations}
-
-    
 \end{figure}
 \section{Analysis of customer satisfaction across order channels}
 Secondly, we wanted to investigate whether a relationship exists between the customer's chosen ordering method and their satisfaction ratings. This analysis is crucial to evaluate the effectiveness of digital channels in the Starbucks ecosystem.
@@ -608,7 +604,26 @@ To determine if satisfaction levels vary by ordering method, we analyzed the rel
 \subsection{Results}
 The Kruskal-Wallis test revealed a statistically significant difference in satisfaction ratings across the different channels ($\chi^2 = 2073.6$, $p < 0.001$). Therefore, we reject the null hypothesis ($\mathbf{H_0}$).
 
-Table 5.2 represents the descriptive statistics for customer satisfaction by ordering channel.
+To understand the specific differences between ordering methods, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table \ref{tab:posthoc_satisfaction}, show that all ordering channels differ significantly from one another in terms of customer satisfaction levels ($p < 0.001$).
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l c c c}
+        \hline
+        \textbf{Order Channel} & \textbf{Drive-Thru} & \textbf{In-Store Cashier} & \textbf{Kiosk} \\
+        \hline
+        \textbf{In-Store Cashier} & $<0.001$ & -- & -- \\
+        \textbf{Kiosk}            & $<0.001$ & $<0.001$ & -- \\
+        \textbf{Mobile App}       & $<0.001$ & $<0.001$ & $<0.001$ \\
+        \hline
+    \end{tabular}
+    \caption{Post-hoc pairwise Wilcoxon rank sum test $p$-values for satisfaction by channel (Bonferroni corrected)}
+    \label{tab:posthoc_satisfaction}
+\end{table}
+
+Table \ref{tab:satisfaction_stats} presents the descriptive statistics for customer satisfaction by ordering channel.
+
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.2}
@@ -624,12 +639,12 @@ Table 5.2 represents the descriptive statistics for customer satisfaction by ord
     \label{tab:satisfaction_stats}
 \end{table}
 
-As observed in Table \ref{tab:satisfaction_stats}, the \textbf{Mobile App} users demonstrate the highest levels of satisfaction. To better visualize these differences, Figure \ref{fig:satisfaction_boxplot} presents the distribution of ratings.
+As observed in Table \ref{tab:satisfaction_stats}, the \textbf{Mobile App} users demonstrate the highest levels of satisfaction, likely due to the convenience and personalized experience of the digital interface. Conversely, the \textbf{Drive-Thru} channel shows the lowest mean satisfaction and the highest standard deviation, suggesting a more inconsistent customer experience. These differences are visually compared in the boxplot in Figure \ref{fig:satisfaction_boxplot}, which illustrates the shift in satisfaction distributions across the four channels.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{../Resources/Charts/box-plots/satisfaction_channels_boxplot.pdf}
-    \caption{Distribution of satisfaction ratings across order channels}
+    \includegraphics[width=0.65\textwidth]{../Resources/Charts/box-plots/satisfaction_channels_boxplot.pdf}
+    \caption{Distribution of satisfaction ratings across order channels, showing higher and more consistent satisfaction for digital and in-store channels compared to Drive-Thru.}
     \label{fig:satisfaction_boxplot}
 \end{figure}
 

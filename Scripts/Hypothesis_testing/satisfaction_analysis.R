@@ -15,8 +15,17 @@ print(stats_summary)
 kw_test <- kruskal.test(satisfaction ~ order_channel, data = df)
 print(kw_test)
 
-# 5. Generate PDF Plot
-pdf("satisfaction_channels_boxplot.pdf", width = 8, height = 6)
+# 5. Post-hoc Analysis
+# Pairwise Wilcoxon rank sum test with Bonferroni correction
+posthoc_satisfaction <- pairwise.wilcox.test(df$satisfaction, 
+                                             df$order_channel, 
+                                             p.adjust.method = "bonferroni", 
+                                             exact = FALSE)
+print("Post-hoc Pairwise Wilcoxon Test Results:")
+print(posthoc_satisfaction)
+
+# 6. Generate PDF Plot
+pdf("Charts/Hypothesis_testing/satisfaction_channels_boxplot.pdf", width = 8, height = 6)
 boxplot(satisfaction ~ order_channel, data = df,
         main = "Customer Satisfaction by Order Channel",
         xlab = "Order Channel",
