@@ -685,9 +685,35 @@ The test yielded the following results:
 Since the $p$-value is significantly lower than $\alpha = 0.05$, we reject the null hypothesis $H_0$. This provides strong evidence that the difference in spending patterns is statistically significant. The results confirm that members of the rewards program tend to have higher transaction values than non-members.
 
 
+\section{Impact of Drink Customization on Fulfillment Time}
+To further explore operational efficiency, we analyzed whether the complexity of an order---measured by the number of customizations---affects the time required to fulfill it. Following the findings in Section 4.1, we focused this analysis on two specific categories: \texttt{Single Espresso} and \texttt{Single Brewed Coffee}.
 
+\subsection{Formulation of the Hypothesis}
+\begin{itemize}
+    \item $\mathbf{H_0}$: There is no correlation between the number of customizations and fulfillment time.
+    \item $\mathbf{H_1}$: There is a significant correlation between the number of customizations and fulfillment time.
+\end{itemize}
 
-\chapter{Additional analyses aka something new}
+\subsection{Methodology}
+The relationship was investigated using the \textbf{Spearman's Rank Correlation Coefficient}, which is appropriate for non-normally distributed data and discrete variables. We visualized the relationship by plotting the mean fulfillment time for each customization level with standard error bars to account for variability.
+
+\subsection{Results and Interpretation}
+As illustrated in Figure \ref{fig:customization_fulfillment_averages}, the mean fulfillment time remains remarkably stable across different levels of customization for both beverage types.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../Resources/Hypothesis_testing/Customization_vs_Fulfillment_Averages.pdf}
+    \caption{Mean fulfillment time vs. number of customizations for Espresso and Brewed Coffee}
+    \label{fig:customization_fulfillment_averages}
+\end{figure}
+
+The statistical analysis confirmed this visual observation:
+\begin{itemize}
+    \item \textbf{Single Espresso}: $\rho = 0.023$, $p = 0.497$
+    \item \textbf{Single Brewed Coffee}: $\rho = -0.041$, $p = 0.233$
+\end{itemize}
+
+In both cases, the $p$-values are significantly higher than the threshold of 0.05, meaning we \textbf{fail to reject the null hypothesis}. This suggests that for these standardized beverage types, the number of customizations (such as extra shots or syrup) does not significantly impede the fulfillment process. This reflects high operational efficiency and standardization in the drink preparation workflow.
 
 \chapter{Results and conclusions}
 \end{document}
