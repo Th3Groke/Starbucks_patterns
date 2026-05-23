@@ -754,9 +754,15 @@ To introduce an advanced statistical modeling technique, a multiple linear regre
 
 \section{Methodology}
 The theoretical model is expressed by the following equation:
-$$ \mathrm{fulfillment\_time} = \beta_0 + \beta_1(\mathrm{num\_customizations}) + \beta_2(\mathrm{cart\_size}) + \sum \beta_k(\mathrm{order\_channel}_k) + \epsilon $$
-Since \texttt{order\_channel} is a categorical variable, it was encoded as dummy variables within the model. The standard assumptions of linear regression—linearity, homoscedasticity, independence, and normality of residuals—were verified using diagnostic residual plots.
-
+$$ FT = \beta_0 + \beta_1(NC) + \beta_2(CS) + \sum \beta_k(OC_k) + \epsilon $$
+Where:
+\begin{itemize}
+    \item $FT$ = \texttt{fulfillment\_time\_min}
+    \item $NC$ = \texttt{num\_customizations}
+    \item $CS$ = \texttt{cart\_size}
+    \item $OC$ = \texttt{order\_channel}
+\end{itemize}
+Since \texttt{order\_channel} is a categorical variable, it was encoded as dummy variables within the model. The standard assumptions of linear regression were verified using diagnostic residual plots.
 \section{Results and Interpretation}
 The multiple linear regression model yielded an Adjusted R-squared value of 0.3587, indicating that approximately 35.87\% of the variance in fulfillment time can be explained by these predictors. The overall model was statistically significant ($p < 0.001$).
 
