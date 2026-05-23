@@ -665,7 +665,7 @@ Starbucks offers a rewards program to incentivize customer loyalty. In this sect
     \label{tab:median_spend}
 \end{table}
 
-\subsection{Hypothesis Formulation}
+\subsection{Formulation of the Hypothesis}
 We test the following hypotheses at a significance level of $\alpha = 0.05$:
 \begin{itemize}
     \item $H_0$: The distribution of total spend is the same for both groups.
@@ -702,7 +702,7 @@ As illustrated in Figure \ref{fig:customization_fulfillment_averages}, the mean 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{../Resources/Hypothesis_testing/Customization_vs_Fulfillment_Averages.pdf}
+    \includegraphics[width=0.65\textwidth]{../Resources/Hypothesis_testing/Customization_vs_Fulfillment_Averages.pdf}
     \caption{Mean fulfillment time vs. number of customizations for Espresso and Brewed Coffee}
     \label{fig:customization_fulfillment_averages}
 \end{figure}
@@ -714,6 +714,37 @@ The statistical analysis confirmed this visual observation:
 \end{itemize}
 
 In both cases, the $p$-values are significantly higher than the threshold of 0.05, meaning we \textbf{fail to reject the null hypothesis}. This suggests that for these standardized beverage types, the number of customizations (such as extra shots or syrup) does not significantly impede the fulfillment process. This reflects high operational efficiency and standardization in the drink preparation workflow.
+
+\section{The correlation between Satisfaction and Fulfillment Time}
+
+\subsection{Formulation of the Hypothesis}
+Following the preliminary claim from Section 1.1 that customer satisfaction correlates with fulfillment time, we performed a statistical test to evaluate the strength of this relationship. We establish the following hypotheses at a significance level of $\alpha = 0.05$:
+\begin{itemize}
+    \item $H_0$: There is no monotonic relationship between fulfillment time and customer satisfaction ($\rho = 0$).
+    \item $H_1$: There is a statistically significant monotonic relationship between fulfillment time and customer satisfaction ($\rho \neq 0$).
+\end{itemize}
+
+\subsection{Methodology}
+Given that customer satisfaction is serial data (measured on a discrete 1 to 5 scale), a Spearman's rank correlation test was utilized. Fulfillment time was measured continuously in minutes. 
+
+\subsection{Results and Interpretation}
+To visualize the relationship, fulfillment times were categorized into 2-minute bins, and the average satisfaction was plotted for each bin (Figure \ref{fig:satisfaction_vs_fulfillment}).
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.6\textwidth]{../Resources/Hypothesis_testing/satisfaction_vs_fulfillment.pdf}
+\caption{Average customer satisfaction across different fulfillment time bins.}
+    \label{fig:satisfaction_vs_fulfillment}
+\end{figure}
+
+The statistical test yielded the following results:
+\begin{itemize}
+    \item \textbf{Spearman's $\rho$ Estimate:} \textit{-0.03311538}
+    \item \textbf{$p$-value:} \textit{2.2e-16}
+\end{itemize}
+
+
+Since the $p$-value is significantly lower than $\alpha = 0.05$, we reject the null hypothesis $H_0$. The test confirms a statistically significant negative correlation between fulfillment time and customer satisfaction. The downward trend displayed in Figure \ref{fig:satisfaction_vs_fulfillment} visually supports this, illustrating that as customer wait times increase, average satisfaction scores steadily decline. Consequently, operational improvements focused on minimizing wait times should be heavily prioritized to maintain high customer satisfaction.
 
 \chapter{Results and conclusions}
 \end{document}
