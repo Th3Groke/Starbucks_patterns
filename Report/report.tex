@@ -443,12 +443,12 @@ In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewnes
     \centering
     \begin{tabular}{|l|l|}
         \hline
-        Measure  & Obtained result  \\ \hline
+        Measure  & Obtained result   \\ \hline
         Skewness & 0.439109484304028 \\ \hline
-        Kurtosis & 2.70132167629071 \\ \hline
+        Kurtosis & 2.70132167629071  \\ \hline
     \end{tabular}
 
-    
+
     \caption{Skewness and Kurtosis results for total\_spend without outliers}
     \label{tab:skew_kurt_total_spend_without_outliers}
 \end{table}
@@ -611,11 +611,11 @@ To understand the specific differences between ordering methods, a post-hoc pair
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{l c c c}
         \hline
-        \textbf{Order Channel} & \textbf{Drive-Thru} & \textbf{In-Store Cashier} & \textbf{Kiosk} \\
+        \textbf{Order Channel}    & \textbf{Drive-Thru} & \textbf{In-Store Cashier} & \textbf{Kiosk} \\
         \hline
-        \textbf{In-Store Cashier} & $<0.001$ & -- & -- \\
-        \textbf{Kiosk}            & $<0.001$ & $<0.001$ & -- \\
-        \textbf{Mobile App}       & $<0.001$ & $<0.001$ & $<0.001$ \\
+        \textbf{In-Store Cashier} & $<0.001$            & --                        & --             \\
+        \textbf{Kiosk}            & $<0.001$            & $<0.001$                  & --             \\
+        \textbf{Mobile App}       & $<0.001$            & $<0.001$                  & $<0.001$       \\
         \hline
     \end{tabular}
     \caption{Post-hoc pairwise Wilcoxon rank sum test $p$-values for satisfaction by channel (Bonferroni corrected)}
@@ -657,8 +657,8 @@ Starbucks offers a rewards program to incentivize customer loyalty. In this sect
         \hline
         \multicolumn{1}{|c|}{\textbf{Group}} & \textbf{Median Spend (USD)} \\
         \hline
-        Rewards Members & 15.12 \\
-        Non-Rewards Members & 13.40 \\
+        Rewards Members                      & 15.12                       \\
+        Non-Rewards Members                  & 13.40                       \\
         \hline
     \end{tabular}
     \caption{Comparison of median spending between customer groups.}
@@ -725,15 +725,15 @@ Following the preliminary claim from Section 1.1 that customer satisfaction corr
 \end{itemize}
 
 \subsection{Methodology}
-Given that customer satisfaction is serial data (measured on a discrete 1 to 5 scale), a Spearman's rank correlation test was utilized. Fulfillment time was measured continuously in minutes. 
+Given that customer satisfaction is serial data (measured on a discrete 1 to 5 scale), a Spearman's rank correlation test was utilized. Fulfillment time was measured continuously in minutes.
 
 \subsection{Results and Interpretation}
 To visualize the relationship, fulfillment times were categorized into 2-minute bins, and the average satisfaction was plotted for each bin (Figure \ref{fig:satisfaction_vs_fulfillment}).
 
 \begin{figure}[H]
     \centering
-\includegraphics[width=0.6\textwidth]{../Resources/Hypothesis_testing/satisfaction_vs_fulfillment.pdf}
-\caption{Average customer satisfaction across different fulfillment time bins.}
+    \includegraphics[width=0.6\textwidth]{../Resources/Hypothesis_testing/satisfaction_vs_fulfillment.pdf}
+    \caption{Average customer satisfaction across different fulfillment time bins.}
     \label{fig:satisfaction_vs_fulfillment}
 \end{figure}
 
@@ -746,6 +746,37 @@ The statistical test yielded the following results:
 
 Since the $p$-value is significantly lower than $\alpha = 0.05$, we reject the null hypothesis $H_0$. The test confirms a statistically significant negative correlation between fulfillment time and customer satisfaction. The downward trend displayed in Figure \ref{fig:satisfaction_vs_fulfillment} visually supports this, illustrating that as customer wait times increase, average satisfaction scores steadily decline. Consequently, operational improvements focused on minimizing wait times should be heavily prioritized to maintain high customer satisfaction.
 
+
+\chapter{Multiple Linear Regression: Predicting Fulfillment Time}
+This chapter transitions from basic hypothesis testing to predictive statistical modeling by applying Multiple Linear Regression to the dataset.
+We wanted to see how different variables $($specifically order complexity and ordering channels$)$ interact to impact overall order fulfillment time.
+\section{Introduction}
+To introduce an advanced statistical modeling technique, a multiple linear regression model was developed to predict the time required to complete an order (\texttt{fulfillment\_time\_min}). The independent variables selected for this model include the number of customizations (\texttt{num\_customizations}), the total number of items in the order (\texttt{cart\_size}), and the ordering method (\texttt{order\_channel}).
+
+\section{Methodology}
+The theoretical model is expressed by the following equation:
+$$ FT = \beta_0 + \beta_1(NC) + \beta_2(CS) + \sum \beta_k(OC_k) + \epsilon $$
+Where:
+\begin{itemize}
+    \item $FT$ = \texttt{fulfillment\_time\_min}
+    \item $NC$ = \texttt{num\_customizations}
+    \item $CS$ = \texttt{cart\_size}
+    \item $OC$ = \texttt{order\_channel}
+\end{itemize}
+Since \texttt{order\_channel} is a categorical variable, it was encoded as dummy variables within the model. The standard assumptions of linear regression were verified using diagnostic residual plots.
+\section{Results and Interpretation}
+The multiple linear regression model yielded an Adjusted R-squared value of 0.3587, indicating that approximately 35.87\% of the variance in fulfillment time can be explained by these predictors. The overall model was statistically significant ($p < 0.001$).
+
+Looking at the individual coefficients, the results revealed a surprising operational insight. Neither the number of customizations ($p = 0.495$) nor the cart size ($p = 0.524$) were statistically significant predictors of fulfillment time. The coefficient estimates for both variables were practically zero ($-0.002$ and $-0.001$, respectively). This suggests that order complexity does not create meaningful operational bottlenecks.
+
+Instead, the ordering method (\texttt{order\_channel}) is the primary driver of fulfillment time. The baseline expected wait time (representing the Drive-Thru channel, captured by the intercept) is 5.81 minutes. In contrast, all other channels are significantly faster ($p < 0.001$): placing an order via the In-Store Cashier reduces the expected wait time by 2.60 minutes, using a Kiosk reduces it by 1.79 minutes, and using the Mobile App reduces it by 1.29 minutes compared to the Drive-Thru.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../Resources/Charts/Hypothesis_testing/Regression_Diagnostics.pdf}
+    \caption{Diagnostic residual plots verifying the assumptions of the multiple linear regression model}
+    \label{fig:regression_diagnostics}
+\end{figure}
 \chapter{Results and conclusions}
 \section{Executive Summary of Empirical Findings}
 The comprehensive statistical evaluation of the Starbucks dataset provides clear evidence regarding customer behaviors, operational efficiency, and the impact of digital channels. By analyzing over 100,000 transactions, we identified key drivers of both revenue and customer satisfaction.
