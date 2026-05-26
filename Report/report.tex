@@ -321,7 +321,7 @@ Figure \ref{fig:total_spend-order_channel-box} presents comparison of \texttt{to
 
 \chapter{Testing of the hypothesis about the normality of distributions}
 \section{Formulation of the Hypotheses}
-To determine the appropriate statistical methods for further analysis, it is necessary to test whether the continuous variables in the dataset specifically the total cost of the transaction ( \texttt{total\_spend} ) and the time from order placement to completion ( \texttt{fulfillment\_time\_min} ) — follow a normal (Gaussian) distribution.
+\noindent To determine the appropriate statistical methods for further analysis, it is necessary to test whether the numerical variables in the dataset - specifically the continuous total cost of the transaction (\texttt{total\_spend}) and the discrete order completion times (\texttt{fulfillment\_time\_min}) - follow a normal (Gaussian) distribution.
 For each of these variables, the following statistical hypotheses are established:
 \begin{itemize}
     \item $\mathbf{H_0}$:The distribution of the analyzed variable follows a normal distribution.
@@ -330,7 +330,7 @@ For each of these variables, the following statistical hypotheses are establishe
 \end{itemize}
 The adopted level of significance for all statistical tests in this report is alpha=0.05.
 \section{Visual Assessment Using Q-Q Plots}
-To initially assess the distribution of the continuous variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely with the diagonal reference line.
+To initially assess the distribution of the analyzed numerical variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely along the diagonal 45-degree reference line.
 \subsection{total\_spend}
 In Figure \ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount spent.
 \begin{figure}[H]
