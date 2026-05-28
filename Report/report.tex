@@ -7,6 +7,7 @@
 \usepackage{float}
 \usepackage{datetime}
 \usepackage{caption}
+\usepackage{amsmath}
 \newcommand{\Logo}{
     \begin{figure}[H]
         \centering
@@ -765,18 +766,33 @@ Where:
 \end{itemize}
 Since \texttt{order\_channel} is a categorical variable, it was encoded as dummy variables within the model. The standard assumptions of linear regression were verified using diagnostic residual plots.
 \section{Results and Interpretation}
-The multiple linear regression model yielded an Adjusted R-squared value of 0.3587, indicating that approximately 35.87\% of the variance in fulfillment time can be explained by these predictors. The overall model was statistically significant ($p < 0.001$).
+The multiple linear regression model yielded an Adjusted R-squared value of 0.3587, indicating that approximately 35.87\% of the variance in fulfillment time can be explained by these predictors. The overall model was statistically significant ($p < 0.001$). However, the low value of $R^2$ suggests that a large portion of the variance in fulfillment time is driven by external factors not included in this model (e.g., time of day, staffing levels, or specific store traffic).
 
-Looking at the individual coefficients, the results revealed a surprising operational insight. Neither the number of customizations ($p = 0.495$) nor the cart size ($p = 0.524$) were statistically significant predictors of fulfillment time. The coefficient estimates for both variables were practically zero ($-0.002$ and $-0.001$, respectively). This suggests that order complexity does not create meaningful operational bottlenecks.
+Based on the analysis, the following empirical regression formula was obtained to predict Fulfillment Time ($FT$):
 
-Instead, the ordering method (\texttt{order\_channel}) is the primary driver of fulfillment time. The baseline expected wait time (representing the Drive-Thru channel, captured by the intercept) is 5.81 minutes. In contrast, all other channels are significantly faster ($p < 0.001$): placing an order via the In-Store Cashier reduces the expected wait time by 2.60 minutes, using a Kiosk reduces it by 1.79 minutes, and using the Mobile App reduces it by 1.29 minutes compared to the Drive-Thru.
+\[
+    FT = 5.81 - 0.002(NC) - 0.001(CS) - 2.60(\text{InStore}) - 1.79(\text{Kiosk}) - 1.29(\text{MobileApp})
+\]
 
-\begin{figure}[htbp]
+In this equation, the baseline expected wait time, represented by the intercept (the Drive-Thru channel), is 5.81 minutes. The obtained parameters for the number of customizations ($NC$) and cart size ($CS$) are practically zero ($-0.002$ and $-0.001$, respectively). Consequently, neither the number of customizations ($p=0.495$) nor the cart size ($p=0.524$) are statistically significant predictors of fulfillment time. This suggests that order complexity does not create meaningful operational bottlenecks.
+
+Instead, the ordering method (order\_channel) is the primary driver of fulfillment time. The formula demonstrates that all other channels are significantly faster ($p < 0.001$) than the baseline: placing an order via the In-Store Cashier reduces the expected wait time by 2.60 minutes, using a Kiosk reduces it by 1.79 minutes, and using the Mobile App reduces it by 1.29 minutes compared to the Drive-Thru.
+
+Finally, \textbf{Figure 6.1} presents the diagnostic plots used to verify the assumptions of the multiple linear regression model.
+\begin{itemize}
+    \item \textbf{Residuals vs Fitted:} The red trend line remains relatively flat at zero, suggesting the linearity assumption holds reasonably well, despite the vertical banding caused by the categorical nature of the order channels.
+    \item \textbf{Q-Q Residuals:} The residuals follow a normal distribution closely in the middle quantiles, though noticeable deviations at the extremes indicate heavier tails.
+    \item \textbf{Scale-Location:} The roughly horizontal red line indicates homoscedasticity, meaning the variance of the residuals is relatively equal across the fitted values.
+    \item \textbf{Residuals vs Leverage:} The plot reveals no extreme outliers with a high Cook's distance (no points cross the dashed threshold), confirming that no single observation is unduly influencing the regression model's coefficient estimates.
+\end{itemize}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{../Resources/Charts/Hypothesis_testing/Regression_Diagnostics.pdf}
     \caption{Diagnostic residual plots verifying the assumptions of the multiple linear regression model}
     \label{fig:regression_diagnostics}
 \end{figure}
+
 \chapter{Results and conclusions}
 \section{Executive Summary of Empirical Findings}
 The comprehensive statistical evaluation of the Starbucks dataset provides clear evidence regarding customer behaviors, operational efficiency, and the impact of digital channels. By analyzing over 100,000 transactions, we identified key drivers of both revenue and customer satisfaction.
@@ -784,14 +800,14 @@ The comprehensive statistical evaluation of the Starbucks dataset provides clear
 \section{Strategic Business Insights}
 \begin{itemize}
     \item \textbf{Digital Migration and Loyalty Programs:} Our analysis proved that the Mobile App channel achieves the highest customer satisfaction score (3.86) compared to traditional channels like the Drive-Thru (3.44). Furthermore, the Mann-Whitney U test confirmed that Starbucks Rewards members spend significantly more (median \$15.12) than non-members (\$13.40). \\
-    \textit{Strategic Action:} Starbucks should aggressively push digital adoption and loyalty program enrollment, as these are proven drivers of both higher revenue and an improved customer experience.
+          \textit{Strategic Action:} Starbucks should aggressively push digital adoption and loyalty program enrollment, as these are proven drivers of both higher revenue and an improved customer experience.
 
-   \item \textbf{Monetizing Customization Without Operational Drag:} A strong generational trend exists, with younger demographics (18–34) utilizing customizations heavily. Crucially, our Spearman's rank correlation analysis revealed that for core beverages (like Espresso and Brewed Coffee), these customizations \textbf{do not} significantly impede fulfillment time. \\
-    \textit{Strategic Action:} Marketing teams can safely promote high-margin customizations to younger audiences without the fear of creating operational bottlenecks or slowing down service at the bar.
+    \item \textbf{Monetizing Customization Without Operational Drag:} A strong generational trend exists, with younger demographics (18–34) utilizing customizations heavily. Crucially, our Spearman's rank correlation analysis revealed that for core beverages (like Espresso and Brewed Coffee), these customizations \textbf{do not} significantly impede fulfillment time. \\
+          \textit{Strategic Action:} Marketing teams can safely promote high-margin customizations to younger audiences without the fear of creating operational bottlenecks or slowing down service at the bar.
 
-    \newpage
+          \newpage
 
     \item \textbf{Speed as a Direct Driver of Satisfaction:} A statistically significant negative correlation was found between fulfillment time and customer satisfaction. While average store times converge toward normality, any individual delays directly harm the customer experience. \\
-    \textit{Strategic Action:} Operational improvements must ruthlessly focus on minimizing wait times. Addressing the higher variance observed in brewed coffee fulfillment (compared to standardized espresso production) could yield immediate improvements in overall satisfaction ratings.
+          \textit{Strategic Action:} Operational improvements must ruthlessly focus on minimizing wait times. Addressing the higher variance observed in brewed coffee fulfillment (compared to standardized espresso production) could yield immediate improvements in overall satisfaction ratings.
 \end{itemize}
 \end{document}
