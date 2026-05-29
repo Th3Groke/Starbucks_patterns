@@ -66,7 +66,7 @@ Below there is a list of all attributes of the dataset.
 \begin{itemize}
     \item IDs:
           \begin{itemize}
-              \item customer \_id: unique identifier for each customer (15000 unique profiles),
+              \item customer \_id: unique identifier for each customer (15 000 unique profiles),
               \item order\_id: unique transaction id (100 000 orders),
               \item store\_id: identifier for each store.
           \end{itemize}
@@ -163,7 +163,7 @@ In Figure \ref{fig:total_spend_histogram} we can see graphical representation of
     \label{fig:total_spend_histogram}
 \end{figure}
 
-\noindent We will use this data and compare it to the order\_channel to check if there exists a relation between the method of ordering and the amount spent.
+\noindent We will use this data and compare it to the  \texttt{order\_channel} to check if there exists a relation between the method of ordering and the amount spent.
 
 
 
@@ -171,7 +171,7 @@ In Figure \ref{fig:total_spend_histogram} we can see graphical representation of
 %fulfillment time - Oliwier robi
 \subsection{fulfillment\_time\_min}
 \noindent This feature measures the time (in minutes) from the moment the order is placed until it is ready for the customer. It is a key metric for operational efficiency. \\
-In Figure \ref{fig:fulfillment_time_histogram} we can see graphical representation of the fulfillment time.
+In Figure \ref{fig:fulfillment_time_histogram} we can see graphical representation of the  \texttt{fulfillment time}.
 % import of the bar chart for fulfillment time
 \begin{figure}[H]
 
@@ -188,7 +188,7 @@ In Figure \ref{fig:fulfillment_time_histogram} we can see graphical representati
 \section{Descriptive statistics by attribute}
 The following subsection details the primary descriptive statistics for each selected attribute.
 \subsection{order\_channel}
-\noindent As the order\_channel is presented as a string, we will calculate the mode and cardinality to understand the distribution of ordering methods among customers. This will help us identify which channels are most popular and if there are any significant differences in customer preferences.
+\noindent As the \texttt{order\_channel} is presented as a string, we will calculate the mode and cardinality (results visible in Table~\ref{tab:desc_order_channel}) to understand the distribution of ordering methods among customers. This will help us identify which channels are most popular and if there are any significant differences in customer preferences.
 
 \begin{table}[H]
 
@@ -196,22 +196,23 @@ The following subsection details the primary descriptive statistics for each sel
     \begin{tabular}{|l|l|l|}
         \hline
         Measure of a central tendency & Obtained result \\ \hline
-        mode                          & 25-34           \\ \hline
-        cardinality                   & 5               \\ \hline
+        mode                          & Mobile App           \\ \hline
+        mode frequency                & 42521           \\ \hline
+        cardinality                   & 4               \\ \hline
     \end{tabular}
     \caption{Descriptive statistics for order\_channel}
     \label{tab:desc_order_channel}
 \end{table}
 \subsection{customer\_age\_group}
-\noindent As the customer\_age\_group is presented as a string, we will calculate the mode and cardinality to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
+\noindent As the \texttt{customer\_age\_group} is presented as a string, we will calculate the mode and cardinality (results visible in Table~\ref{tab:desc_customer_age_group}) to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
 
 \begin{table}[H]
-
     \centering
     \begin{tabular}{|l|l|l|}
         \hline
         Measure of a central tendency & Obtained result \\ \hline
         mode                          & 25-34           \\ \hline
+        mode frequency                & 29782           \\ \hline
         cardinality                   & 5               \\ \hline
     \end{tabular}
 
@@ -220,17 +221,16 @@ The following subsection details the primary descriptive statistics for each sel
 \end{table}
 
 \subsection{num\_customizations}
-\noindent As num\_customizations is a discrete numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of order modifications among customers. This will help us identify average customization patterns, variability in the number of modifications per order, and whether certain customers tend to customize their orders significantly more than others.
+\noindent As \texttt{num\_customizations} is a discrete numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile and 0.75 quartile (results visible in Table~\ref{tab:desc_num_customizations}) to understand the distribution of order modifications among customers. This will help us identify average customization patterns, variability in the number of modifications per order, and whether certain customers tend to customize their orders significantly more than others.
 
 \begin{table}[H]
-
     \centering
     \begin{tabular}{|l|l|l|}
         \hline
         Measure of a central tendency & Obtained result   \\ \hline
         mean value                    & 1.81077           \\ \hline
         median value                  & 2                 \\ \hline
-        mode value                    & 0.998356888479198 \\ \hline
+        mode value                    & 1                 \\ \hline
         range                         & 0 - 8             \\ \hline
         standard deviation            & 1.46279985129078  \\ \hline
         0.25 Quartile                 & 1                 \\ \hline
@@ -241,7 +241,7 @@ The following subsection details the primary descriptive statistics for each sel
 \end{table}
 
 \subsection{total\_spend}
-\noindent As the total\_spend is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
+\noindent As the \texttt{total\_spend} is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile (results visible in Table~\ref{tab:desc_total_spend}) to understand the distribution of spending amounts among customers. This will help us identify average spending patterns, variability in transaction values, and whether there are significant outliers in customer expenditures.
 
 \begin{figure}[H]
     \centering
@@ -252,7 +252,7 @@ The following subsection details the primary descriptive statistics for each sel
             Measure of a central tendency & Obtained result  \\ \hline
             mean value                    & 14.8667708       \\ \hline
             median value                  & 14.17            \\ \hline
-            mode value                    & 12.1453342509566 \\ \hline
+            mode value                    & 12.15            \\ \hline
             range                         & 3.51 - 40.31     \\ \hline
             standard deviation            & 5.50680009558536 \\ \hline
             0.25 Quartile                 & 10.8375          \\ \hline
@@ -269,9 +269,9 @@ The following subsection details the primary descriptive statistics for each sel
     \end{minipage}
 \end{figure}
 
-\noindent Using the Interquartile Range (IQR) method, we identified that 1.41\% of observations in the total\_spend variable are outliers (1,410 records out of 100,000). These outliers primarily represent unusually high-value transactions that exceed the upper bound of \$29.21.
+\noindent Using the Interquartile Range (IQR) method, we identified that 1.41\% of observations in the \texttt{total\_spend} variable are outliers (1,410 records out of 100,000). These outliers primarily represent unusually high-value transactions that exceed the upper bound of \$29.21.
 \subsection{fulfillment\_time\_min}
-\noindent As the fulfillment\_time\_min is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences. In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presenting these fulfillment time characteristics.
+\noindent As the \texttt{fulfillment\_time\_min} is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile (results visible in Table~\ref{tab:desc_fulfillment_time}) to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences. In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presenting these fulfillment time characteristics.
 
 \vspace{1em}
 \noindent
@@ -285,7 +285,7 @@ The following subsection details the primary descriptive statistics for each sel
             Measure of a central tendency & Obtained result  \\ \hline
             mean value                    & 4.54608          \\ \hline
             median value                  & 4.4              \\ \hline
-            mode value                    & 4.31807337490211 \\ \hline
+            mode value                    & 4.3              \\ \hline
             range                         & 1 - 11.2         \\ \hline
             standard deviation            & 1.55026948204314 \\ \hline
             0.25 Quartile                 & 3.4              \\ \hline
@@ -308,13 +308,13 @@ The following subsection details the primary descriptive statistics for each sel
 \newpage
 
 \subsection{Total\_spend and order\_channel comparison}
-Figure \ref{fig:total_spend-order_channel-box} presents comparison of total\_spend and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
+Figure \ref{fig:total_spend-order_channel-box} presents comparison of \texttt{total\_spend} and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/total_spend-order_channel-box.pdf}
-    \caption{box-plot comparing total\_spend and order\_channel characteristics}
+    \caption{box-plot comparing \texttt{total\_spend} and \texttt{order\_channel} characteristics}
     \label{fig:total_spend-order_channel-box}
 \end{figure}
 
@@ -322,7 +322,7 @@ Figure \ref{fig:total_spend-order_channel-box} presents comparison of total\_spe
 
 \chapter{Testing of the hypothesis about the normality of distributions}
 \section{Formulation of the Hypotheses}
-To determine the appropriate statistical methods for further analysis, it is necessary to test whether the continuous variables in the dataset specifically the total cost of the transaction (total\_spend) and the time from order placement to completion (fulfillment\_time\_min) — follow a normal (Gaussian) distribution.
+\noindent To determine the appropriate statistical methods for further analysis, it is necessary to test whether the numerical variables in the dataset - specifically the continuous total cost of the transaction (\texttt{total\_spend}) and the discrete order completion times (\texttt{fulfillment\_time\_min}) - follow a normal (Gaussian) distribution.
 For each of these variables, the following statistical hypotheses are established:
 \begin{itemize}
     \item $\mathbf{H_0}$:The distribution of the analyzed variable follows a normal distribution.
@@ -331,7 +331,7 @@ For each of these variables, the following statistical hypotheses are establishe
 \end{itemize}
 The adopted level of significance for all statistical tests in this report is alpha=0.05.
 \section{Visual Assessment Using Q-Q Plots}
-To initially assess the distribution of the continuous variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely with the diagonal reference line.
+To initially assess the distribution of the analyzed numerical variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely along the diagonal 45-degree reference line.
 \subsection{total\_spend}
 In Figure \ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount spent.
 \begin{figure}[H]
@@ -340,7 +340,7 @@ In Figure \ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount 
     \caption{Normal Q-Q Plot for total\_spend}
     \label{fig:total_spend_qq}
 \end{figure}
-As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction (total\_spend)  align closely with the reference line in the central quantiles. However, deviations are visible at the both uper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum. These outliers comprise 1.41\% of the dataset and represent unusual purchasing behaviors at both ends of the spending range.
+As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction ( \texttt{total\_spend} )  align closely with the reference line in the central quantiles. However, deviations are visible at both the upper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum. These outliers comprise 1.41\% of the dataset and represent unusual purchasing behaviors at both ends of the spending range.
 \subsection{fulfillment\_time\_min}
 In Figure \ref{fig:fulfillment_time_qq} we can see the Q-Q Plot for the fulfillment time.
 \begin{figure}[H]
@@ -384,7 +384,7 @@ In Table \ref{tab:skew_kurt_fulfillment_time} we can see the Skewness and Kurtos
     \caption{Skewness and Kurtosis results for fulfillment\_time\_min}
     \label{tab:skew_kurt_fulfillment_time}
 \end{table}
-The fulfillment\_time\_min variable displays near-perfect symmetry with a minimal skewness of 0.36 and a kurtosis of 2.98, demonstrating that its tail behavior aligns almost perfectly with a theoretical normal distribution.
+The \texttt{fulfillment\_time\_min} variable displays near-perfect symmetry with a minimal skewness of 0.36 and a kurtosis of 2.98, demonstrating that its tail behavior aligns almost perfectly with a theoretical normal distribution.
 \section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
 To conclusively determine whether the data follows a normal distribution, a Kolmogorov-Smirnov (K-S) test was conducted. The K-S test operates by comparing the actual distribution of the dataset against a theoretically perfect normal curve. In this test, the null hypothesis assumes that the data is perfectly normal. The resulting p-value indicates the probability of seeing the current data if it were truly normal; a p-value below the standard threshold of 0.05 means we must reject the null hypothesis and conclude that the data significantly deviates from a normal distribution.
 \subsection{total\_spend}
@@ -402,7 +402,7 @@ In Table \ref{tab:ks_total_spend} we can see the Skewness and Kurtosis results f
     \caption{Kolmogorov-Smirnov test results for total\_spend}
     \label{tab:ks_total_spend}
 \end{table}
-For the total\_spend variable, the K-S test returned p-value equal $2.2\cdot10^{-16}$
+For the \texttt{total\_spend variable}, the K-S test returned p-value equal $2.2\cdot10^{-16}$
 Because this p-value is vastly smaller than 0.05, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
 \subsection{fulfillment\_time\_min}
 In Table \ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
@@ -419,13 +419,13 @@ In Table \ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis resu
     \caption{Kolmogorov-Smirnov test results for fulfillment\_time\_min}
     \label{tab:ks_fulfillment_time}
 \end{table}
-Similarly the p-value for  fulfillment\_time\_min equals $2.2\cdot10^{-16}$.
+Similarly the p-value for  \texttt{fulfillment\_time\_min} equals $2.2\cdot10^{-16}$.
 Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
 
 \section{Outliers and their impact on normality}
 \subsection{total\_spend}
-Outliers can significantly distort the shape of a distribution, leading to deviations from normality. In the case of total\_spend, the presence of 1.41\% outliers (1,410 records) represents unusually high-value transactions that may have an influence on the distribution. \\
-Below, the same procedure was conducted to assess the impact of these outliers on the normality of the total\_spend variable:
+Outliers can significantly distort the shape of a distribution, leading to deviations from normality. In the case of \texttt{total\_spend}, the presence of 1.41\% outliers (1,410 records) represents unusually high-value transactions that may have an influence on the distribution. \\
+Below, the same procedure was conducted to assess the impact of these outliers on the normality of the \texttt{total\_spend} variable:
 
 \subsubsection{Q-Q plot}
 In Figure \ref{fig:total_spend_without_outliers_qq} we can see the Q-Q Plot for the total amount spent.
@@ -435,7 +435,7 @@ In Figure \ref{fig:total_spend_without_outliers_qq} we can see the Q-Q Plot for 
     \caption{Normal Q-Q Plot for total\_spend without outliers}
     \label{fig:total_spend_without_outliers_qq}
 \end{figure}
-\noindent A difference can be observed in the Q-Q plot for total\_spend after removing outliers. The data points now align more closely with the reference line, particularly in the upper quantiles, indicating a reduction in skewness and a distribution that is closer to normal.
+\noindent A difference can be observed in the Q-Q plot for \texttt{total\_spend} after removing outliers. The data points now align more closely with the reference line, particularly in the upper quantiles, indicating a reduction in skewness and a distribution that is closer to normal.
 
 \subsubsection{Analysis of Skewness and Kurtosis}
 In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewness and Kurtosis results for total amount spent.
@@ -475,15 +475,15 @@ In Table \ref{tab:ks_total_spend} we can see the K-S test results for total amou
 \noindent Similarly to the version containing outliers, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
 
 \subsubsection{Conclusion on outliers' impact on normality}
-\noindent Normality tests were repeated after removing the outliers, and the results still indicated a deviation from normality, albeit less pronounced. This suggests that while outliers contribute to the non-normality of total\_spend, there are underlying distributional characteristics that also deviate from normality.
+\noindent Normality tests were repeated after removing the outliers, and the results still indicated a deviation from normality, albeit less pronounced. This suggests that while outliers contribute to the non-normality of \texttt{total\_spend}, there are underlying distributional characteristics that also deviate from normality.
 
 % \noindent When considering the impact of outliers, they contribute to the right skewness and heavier tails observed in the distribution. These outliers pull the mean upwards and create a long tail on the right side of the distribution, which is reflected in both the skewness and kurtosis values.
 
 
 \section{Conclusion on Normality}
-Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both total\_spend and fulfillment\_time\_min deviates from strict normality.
-For total\_spend, this deviation is driven by a small number of high-value purchases that stretch the data upward. However, eliminating these outliers still results in a distribution that deviates from normality.
-For fulfillment\_time\_min, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
+Based on visual, descriptive, and formal mathematical testing, we conclude that the distribution of both \texttt{total\_spend} and \texttt{fulfillment\_time\_min} deviates from strict normality.
+For \texttt{total\_spend}, this deviation is driven by a small number of high-value purchases that stretch the data upward. However, eliminating these outliers still results in a distribution that deviates from normality.
+For \texttt{fulfillment\_time\_min}, the data is highly symmetrical with only 0.81\% outliers but is cleanly truncated by a 1-minute physical minimum required to fulfill an order. Ultimately, these results perfectly reflect the real-world operational realities of the business: transaction values have no ceiling, and fulfillment times have a hard physical floor.
 
 \chapter{Attempts to find normality in smaller groups}
 
@@ -590,6 +590,7 @@ A Kruskal-Wallis H test was conducted to determine if there were differences in 
     \caption{Boxplot showing the distribution of order customizations by age group, illustrating higher customization frequency among younger customers.}
     \label{fig:age_customizations}
 \end{figure}
+Visual inspection of the boxplot suggests similarities between certain groups, such as the 35-44 and 55+ age groups, which appear to share identical interquartile ranges and medians. However, post-hoc pairwise Wilcoxon testing reveals a statistically significant difference between them ($p < 0.001$). This discrepancy highlights the limitations of boxplots when visualizing discrete numerical data; while the quartile thresholds (Q1, Median, Q3) align at whole numbers due to quantization, the underlying frequency distributions and mean ranks of the customizations differ significantly across the two populations.
 \section{Analysis of customer satisfaction across order channels}
 Secondly, we wanted to investigate whether a relationship exists between the customer's chosen ordering method and their satisfaction ratings. This analysis is crucial to evaluate the effectiveness of digital channels in the Starbucks ecosystem.
 
@@ -649,6 +650,7 @@ As observed in Table \ref{tab:satisfaction_stats}, the \textbf{Mobile App} users
     \label{fig:satisfaction_boxplot}
 \end{figure}
 
+\noindent While Figure~\ref{fig:satisfaction_boxplot} suggests a visual similarity between the \textbf{In-Store Cashier} and \textbf{Mobile App} methods, the statistical test reveals a significant difference between their underlying distributions.
 \section{Do Rewards Members Spend More Than Non-Members?}
 Starbucks offers a rewards program to incentivize customer loyalty. In this section, we analyze whether enrollment in this program correlates with higher transaction values. Given that the \texttt{total\_spend} variable was previously found to be non-normally distributed, we utilize the median as a robust measure of central tendency and the Mann-Whitney U test for hypothesis testing.
 
