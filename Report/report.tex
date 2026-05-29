@@ -26,7 +26,7 @@
 \begin{document}
 
 \begin{titlepage}
-    \Logo
+    \Logo{}
     \centering
     \vspace*{1in}
 
@@ -110,12 +110,11 @@ The following section provides a descriptive summary of the specific attributes 
 \subsection{order\_channel}
 This feature lists which method of ordering was used by the customer while
 placing order. Available options were Mobile App, Drive-Thru, In-Store Cashier, Kiosk. \\
-In Figure \ref{fig:order_channel_pie} we can see graphical representation of order channels.
+In Figure~\ref{fig:order_channel_pie} we can see graphical representation of order channels.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.55\textwidth]{../Resources/Charts/order_channel_pie_chart.pdf}
-    \caption{Percentage distribution of order channels}
-    \label{fig:order_channel_pie}
+    \caption{Percentage distribution of order channels}\label{fig:order_channel_pie}
 \end{figure}
 
 We will use this feature to check how customers were placing orders.
@@ -123,29 +122,27 @@ We will use this feature to check how customers were placing orders.
 %customer age group - Mateusz robi
 \subsection{customer\_age\_group}
 \noindent This feature shows the age group of the customer. \\
-In Figure \ref{fig:customer_age_group_bar} we can see graphical representation of the age group of customers.
+In Figure~\ref{fig:customer_age_group_bar} we can see graphical representation of the age group of customers.
 %import of the bar chart
 \begin{figure}[H]
 
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/customer_age_group_bar_chart.pdf}
-    \caption{Distribution of customer age groups}
-    \label{fig:customer_age_group_bar}
+    \caption{Distribution of customer age groups}\label{fig:customer_age_group_bar}
 \end{figure}
 
-\noindent A relationship between customer age groups and their ordering behavior will be investigated, notably whether certain age groups prefer eg. specific order channels or spend more money.
+\noindent A relationship between customer age groups and their ordering behavior will be investigated, notably whether certain age groups prefer eg.\ specific order channels or spend more money.
 
 %num customizations - Zuzia robi
 \subsection{num\_customizations}
 \noindent This feature shows the number of modifications made to the order (e.g., extra shots, syrup, milk sub). \\
-In Figure \ref{fig:num_customizations_histogram} we can see graphical representation of the number of customizations.
+In Figure~\ref{fig:num_customizations_histogram} we can see graphical representation of the number of customizations.
 %import of the ...
 \begin{figure}[H]
 
     \centering
     \includegraphics[width=0.45\textwidth]{../Resources/Charts/num_customizations_histogram.pdf}
-    \caption{Distribution of the number of customizations among customers}
-    \label{fig:num_customizations_histogram}
+    \caption{Distribution of the number of customizations among customers}\label{fig:num_customizations_histogram}
 \end{figure}
 \noindent We will use this data to check if mobile app users demonstrate higher tendency to customizing their orders.
 
@@ -153,14 +150,13 @@ In Figure \ref{fig:num_customizations_histogram} we can see graphical representa
 %total spent
 \subsection{total\_spend}
 \noindent This feature shows the total cost of the transaction in USD\@. \\
-In Figure \ref{fig:total_spend_histogram} we can see graphical representation of total amount spent on transactions.
+In Figure~\ref{fig:total_spend_histogram} we can see graphical representation of total amount spent on transactions.
 %import of the histogram
 \begin{figure}[H]
 
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/total_spend_histogram.pdf}
-    \caption{Distribution of total spend among customers}
-    \label{fig:total_spend_histogram}
+    \caption{Distribution of total spend among customers}\label{fig:total_spend_histogram}
 \end{figure}
 
 \noindent We will use this data and compare it to the  \texttt{order\_channel} to check if there exists a relation between the method of ordering and the amount spent.
@@ -171,14 +167,13 @@ In Figure \ref{fig:total_spend_histogram} we can see graphical representation of
 %fulfillment time - Oliwier robi
 \subsection{fulfillment\_time\_min}
 \noindent This feature measures the time (in minutes) from the moment the order is placed until it is ready for the customer. It is a key metric for operational efficiency. \\
-In Figure \ref{fig:fulfillment_time_histogram} we can see graphical representation of the  \texttt{fulfillment time}.
+In Figure~\ref{fig:fulfillment_time_histogram} we can see graphical representation of the  \texttt{fulfillment time}.
 % import of the bar chart for fulfillment time
 \begin{figure}[H]
 
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/fulfillment_time_histogram.pdf}
-    \caption{Distribution of fulfillment time among customers}
-    \label{fig:fulfillment_time_histogram}
+    \caption{Distribution of fulfillment time among customers}\label{fig:fulfillment_time_histogram}
 \end{figure}
 
 \noindent We will analyze this attribute to determine how the complexity of an order (number of customizations) affects service speed. This helps identify whether encouraging modifications leads to operational bottlenecks.
@@ -200,8 +195,7 @@ The following subsection details the primary descriptive statistics for each sel
         mode frequency                & 42521           \\ \hline
         cardinality                   & 4               \\ \hline
     \end{tabular}
-    \caption{Descriptive statistics for order\_channel}
-    \label{tab:desc_order_channel}
+    \caption{Descriptive statistics for order\_channel}\label{tab:desc_order_channel}
 \end{table}
 \subsection{customer\_age\_group}
 \noindent As the \texttt{customer\_age\_group} is presented as a string, we will calculate the mode and cardinality (results visible in Table~\ref{tab:desc_customer_age_group}) to understand the distribution of age groups among customers. This will help us identify which age groups are most represented and if there are any significant differences in customer preferences.
@@ -216,8 +210,7 @@ The following subsection details the primary descriptive statistics for each sel
         cardinality                   & 5               \\ \hline
     \end{tabular}
 
-    \caption{Descriptive statistics for customer\_age\_group}
-    \label{tab:desc_customer_age_group}
+    \caption{Descriptive statistics for customer\_age\_group}\label{tab:desc_customer_age_group}
 \end{table}
 
 \subsection{num\_customizations}
@@ -236,8 +229,7 @@ The following subsection details the primary descriptive statistics for each sel
         0.25 Quartile                 & 1                 \\ \hline
         0.75 Quartile                 & 3                 \\ \hline
     \end{tabular}
-    \caption{Descriptive statistics for num\_customizations}
-    \label{tab:desc_num_customizations}
+    \caption{Descriptive statistics for num\_customizations}\label{tab:desc_num_customizations}
 \end{table}
 
 \subsection{total\_spend}
@@ -258,20 +250,18 @@ The following subsection details the primary descriptive statistics for each sel
             0.25 Quartile                 & 10.8375          \\ \hline
             0.75 Quartile                 & 18.18            \\ \hline
         \end{tabular}
-        \captionof{table}{Descriptive statistics for total\_spend}
-        \label{tab:desc_total_spend}
+        \captionof{table}{Descriptive statistics for total\_spend}\label{tab:desc_total_spend}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.3\textwidth}
         \centering
         \includegraphics[width=\linewidth]{../Resources/Charts/box-plots/total_spend-box.pdf}
-        \caption{Box-plot presenting distribution of total value of an order}
-        \label{fig:total_spend-box}
+        \caption{Box-plot presenting distribution of total value of an order}\label{fig:total_spend-box}
     \end{minipage}
 \end{figure}
 
 \noindent Using the Interquartile Range (IQR) method, we identified that 1.41\% of observations in the \texttt{total\_spend} variable are outliers (1,410 records out of 100,000). These outliers primarily represent unusually high-value transactions that exceed the upper bound of \$29.21.
 \subsection{fulfillment\_time\_min}
-\noindent As the \texttt{fulfillment\_time\_min} is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile (results visible in Table~\ref{tab:desc_fulfillment_time}) to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences. In Figure \ref{fig:fulfillment_time-box} we can see the box-plot presenting these fulfillment time characteristics.
+\noindent As the \texttt{fulfillment\_time\_min} is a continuous numerical variable, we will calculate the mean, median, mode, standard deviation, range, 0.25 quartile, and 0.75 quartile (results visible in Table~\ref{tab:desc_fulfillment_time}) to understand the distribution of fulfillment times among customers. This will help us identify average fulfillment patterns, variability in delivery times, and whether there are significant outliers in customer delivery experiences. In Figure~\ref{fig:fulfillment_time-box} we can see the box-plot presenting these fulfillment time characteristics.
 
 \vspace{1em}
 \noindent
@@ -291,15 +281,13 @@ The following subsection details the primary descriptive statistics for each sel
             0.25 Quartile                 & 3.4              \\ \hline
             0.75 Quartile                 & 5.5              \\ \hline
         \end{tabular}
-        \captionof{table}{Descriptive statistics for fulfillment\_time\_min}
-        \label{tab:desc_fulfillment_time}
+        \captionof{table}{Descriptive statistics for fulfillment\_time\_min}\label{tab:desc_fulfillment_time}
     \end{minipage}\hfill
     % Right side: Image
     \begin{minipage}[c]{0.4\textwidth}
         \centering
         \includegraphics[width=\linewidth]{../Resources/Charts/box-plots/fulfillment_time_min-box.pdf}
-        \captionof{figure}{Box-plot presenting distribution of fulfillment time}
-        \label{fig:fulfillment_time-box}
+        \captionof{figure}{Box-plot presenting distribution of fulfillment time}\label{fig:fulfillment_time-box}
     \end{minipage}
 \end{minipage}
 \vspace{1em}
@@ -308,14 +296,13 @@ The following subsection details the primary descriptive statistics for each sel
 \newpage
 
 \subsection{Total\_spend and order\_channel comparison}
-Figure \ref{fig:total_spend-order_channel-box} presents comparison of \texttt{total\_spend} and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
+Figure~\ref{fig:total_spend-order_channel-box} presents comparison of \texttt{total\_spend} and order channel features. We can observe that purchases made with mobile app can bring noticeable increase in revenue.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/box-plots/total_spend-order_channel-box.pdf}
-    \caption{box-plot comparing \texttt{total\_spend} and \texttt{order\_channel} characteristics}
-    \label{fig:total_spend-order_channel-box}
+    \caption{box-plot comparing \texttt{total\_spend} and \texttt{order\_channel} characteristics}\label{fig:total_spend-order_channel-box}
 \end{figure}
 
 
@@ -325,36 +312,34 @@ Figure \ref{fig:total_spend-order_channel-box} presents comparison of \texttt{to
 \noindent To determine the appropriate statistical methods for further analysis, it is necessary to test whether the numerical variables in the dataset - specifically the continuous total cost of the transaction (\texttt{total\_spend}) and the discrete order completion times (\texttt{fulfillment\_time\_min}) - follow a normal (Gaussian) distribution.
 For each of these variables, the following statistical hypotheses are established:
 \begin{itemize}
-    \item $\mathbf{H_0}$:The distribution of the analyzed variable follows a normal distribution.
-    \item $\mathbf{H_1}$:The distribution of the analyzed variable does not follow a normal distribution.
+    \item \(\mathbf{H_0}\):The distribution of the analyzed variable follows a normal distribution.
+    \item \(\mathbf{H_1}\):The distribution of the analyzed variable does not follow a normal distribution.
 
 \end{itemize}
 The adopted level of significance for all statistical tests in this report is alpha=0.05.
 \section{Visual Assessment Using Q-Q Plots}
 To initially assess the distribution of the analyzed numerical variables, Quantile-Quantile (Q-Q) plots were generated. A Q-Q plot compares the quantiles of the sample data against the theoretical quantiles of a perfectly normal distribution. If the observed data is normally distributed, the data points will align closely along the diagonal 45-degree reference line.
 \subsection{total\_spend}
-In Figure \ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount spent.
+In Figure~\ref{fig:total_spend_qq} we can see the Q-Q Plot for the total amount spent.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/total_spend_Q-Q.pdf}
-    \caption{Normal Q-Q Plot for total\_spend}
-    \label{fig:total_spend_qq}
+    \caption{Normal Q-Q Plot for total\_spend}\label{fig:total_spend_qq}
 \end{figure}
-As observed in \ref{fig:total_spend_qq}, the data points for the total cost of the transaction ( \texttt{total\_spend} )  align closely with the reference line in the central quantiles. However, deviations are visible at both the upper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum. These outliers comprise 1.41\% of the dataset and represent unusual purchasing behaviors at both ends of the spending range.
+As observed in~\ref{fig:total_spend_qq}, the data points for the total cost of the transaction (\texttt{total\_spend}) align closely with the reference line in the central quantiles. However, deviations are visible at both the upper and lower extremes, indicating the presence of outliers at both ends of the spending spectrum. These outliers comprise 1.41\% of the dataset and represent unusual purchasing behaviors at both ends of the spending range.
 \subsection{fulfillment\_time\_min}
-In Figure \ref{fig:fulfillment_time_qq} we can see the Q-Q Plot for the fulfillment time.
+In Figure~\ref{fig:fulfillment_time_qq} we can see the Q-Q Plot for the fulfillment time.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/fulfillment_Q-Q.pdf}
-    \caption{Normal Q-Q Plot for fulfillment\_time\_min}
-    \label{fig:fulfillment_time_qq}
+    \caption{Normal Q-Q Plot for fulfillment\_time\_min}\label{fig:fulfillment_time_qq}
 \end{figure}
-As illustrated in \ref{fig:fulfillment_time_qq}, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order.
+As illustrated in~\ref{fig:fulfillment_time_qq}, the Normal Q-Q plot for fulfillment\_time\_min demonstrates strong alignment with the reference line across the central and upper quantiles. However the data exhibits a strict floor effect on the left tail, reflecting the physical minimum time boundary required to fulfill an order.
 
 \section{Analysis of Skewness and Kurtosis}
 To quantitatively assess the shape of the data distributions, skewness and kurtosis were calculated. As a statistical baseline, a perfectly symmetrical normal distribution has a skewness of exactly 0 and a kurtosis of 3.0; deviations from these figures indicate directional skew and the presence of extreme outliers, respectively.
 \subsection{total\_spend}
-In Table \ref{tab:skew_kurt_total_spend} we can see the Skewness and Kurtosis results for total amount spent.
+In Table~\ref{tab:skew_kurt_total_spend} we can see the Skewness and Kurtosis results for total amount spent.
 \begin{table}[H]
 
     \centering
@@ -365,12 +350,11 @@ In Table \ref{tab:skew_kurt_total_spend} we can see the Skewness and Kurtosis re
         Kurtosis & 3.37746288170318 \\ \hline
     \end{tabular}
 
-    \caption{Skewness and Kurtosis results for total\_spend}
-    \label{tab:skew_kurt_total_spend}
+    \caption{Skewness and Kurtosis results for total\_spend}\label{tab:skew_kurt_total_spend}
 \end{table}
 The total\_spend variable exhibits a moderate positive skewness (0.67) and a kurtosis of 3.38, indicating a right-skewed distribution with slightly heavier tails than a standard normal curve due to a subset of high-value transactions.
 \subsection{fulfillment\_time\_min}
-In Table \ref{tab:skew_kurt_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
+In Table~\ref{tab:skew_kurt_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
 \begin{table}[H]
 
     \centering
@@ -381,14 +365,13 @@ In Table \ref{tab:skew_kurt_fulfillment_time} we can see the Skewness and Kurtos
         Kurtosis & 2.98159553637017  \\ \hline
     \end{tabular}
 
-    \caption{Skewness and Kurtosis results for fulfillment\_time\_min}
-    \label{tab:skew_kurt_fulfillment_time}
+    \caption{Skewness and Kurtosis results for fulfillment\_time\_min}\label{tab:skew_kurt_fulfillment_time}
 \end{table}
 The \texttt{fulfillment\_time\_min} variable displays near-perfect symmetry with a minimal skewness of 0.36 and a kurtosis of 2.98, demonstrating that its tail behavior aligns almost perfectly with a theoretical normal distribution.
 \section{Formal Hypothesis Testing (Kolmogorov-Smirnov)}
 To conclusively determine whether the data follows a normal distribution, a Kolmogorov-Smirnov (K-S) test was conducted. The K-S test operates by comparing the actual distribution of the dataset against a theoretically perfect normal curve. In this test, the null hypothesis assumes that the data is perfectly normal. The resulting p-value indicates the probability of seeing the current data if it were truly normal; a p-value below the standard threshold of 0.05 means we must reject the null hypothesis and conclude that the data significantly deviates from a normal distribution.
 \subsection{total\_spend}
-In Table \ref{tab:ks_total_spend} we can see the Skewness and Kurtosis results for total amount spent.
+In Table~\ref{tab:ks_total_spend_no_outliers} we can see the Skewness and Kurtosis results for total amount spent.
 \begin{table}[H]
 
     \centering
@@ -396,16 +379,15 @@ In Table \ref{tab:ks_total_spend} we can see the Skewness and Kurtosis results f
         \hline
         Measure              & Obtained result    \\ \hline
         D (maximum distance) & 0.051314           \\ \hline
-        p-value              & $2.2\cdot10^{-16}$ \\ \hline
+        p-value              & \(2.2\cdot10^{-16}\) \\ \hline
     \end{tabular}
 
-    \caption{Kolmogorov-Smirnov test results for total\_spend}
-    \label{tab:ks_total_spend}
+    \caption{Kolmogorov-Smirnov test results for total\_spend}\label{tab:ks_total_spend_no_outliers}
 \end{table}
-For the \texttt{total\_spend variable}, the K-S test returned p-value equal $2.2\cdot10^{-16}$
-Because this p-value is vastly smaller than 0.05, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
+For the \texttt{total\_spend variable}, the K-S test returned p-value equal \(2.2\cdot10^{-16}\)
+Because this p-value is vastly smaller than 0.05, we decisively reject the null hypothesis \(H_0\), confirming that the distribution of total spend is not normal.
 \subsection{fulfillment\_time\_min}
-In Table \ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
+In Table~\ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis results for fulfillment time.
 \begin{table}[H]
 
     \centering
@@ -413,14 +395,14 @@ In Table \ref{tab:ks_fulfillment_time} we can see the Skewness and Kurtosis resu
         \hline
         Measure              & Obtained result    \\ \hline
         D (maximum distance) & 0.039321           \\ \hline
-        p-value              & $2.2\cdot10^{-16}$ \\ \hline
+        p-value              & \(2.2\cdot10^{-16}\) \\ \hline
     \end{tabular}
 
     \caption{Kolmogorov-Smirnov test results for fulfillment\_time\_min}
     \label{tab:ks_fulfillment_time}
 \end{table}
-Similarly the p-value for  \texttt{fulfillment\_time\_min} equals $2.2\cdot10^{-16}$.
-Therefore, we also reject the null hypothesis $H_0$, for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
+Similarly the p-value for  \texttt{fulfillment\_time\_min} equals \(2.2\cdot10^{-16}\).
+Therefore, we also reject the null hypothesis \(H_0\), for this metric, concluding that fulfillment time does not follow a perfectly normal distribution.
 
 \section{Outliers and their impact on normality}
 \subsection{total\_spend}
@@ -428,17 +410,16 @@ Outliers can significantly distort the shape of a distribution, leading to devia
 Below, the same procedure was conducted to assess the impact of these outliers on the normality of the \texttt{total\_spend} variable:
 
 \subsubsection{Q-Q plot}
-In Figure \ref{fig:total_spend_without_outliers_qq} we can see the Q-Q Plot for the total amount spent.
+In Figure~\ref{fig:total_spend_without_outliers_qq} we can see the Q-Q Plot for the total amount spent.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{../Resources/Charts/Normality_testing/no-outliers/total_spend_without_outliers_Q-Q.pdf}
-    \caption{Normal Q-Q Plot for total\_spend without outliers}
-    \label{fig:total_spend_without_outliers_qq}
+    \caption{Normal Q-Q Plot for total\_spend without outliers}\label{fig:total_spend_without_outliers_qq}
 \end{figure}
 \noindent A difference can be observed in the Q-Q plot for \texttt{total\_spend} after removing outliers. The data points now align more closely with the reference line, particularly in the upper quantiles, indicating a reduction in skewness and a distribution that is closer to normal.
 
 \subsubsection{Analysis of Skewness and Kurtosis}
-In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewness and Kurtosis results for total amount spent.
+In Table~\ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewness and Kurtosis results for total amount spent.
 \begin{table}[H]
 
     \centering
@@ -450,14 +431,13 @@ In Table \ref{tab:skew_kurt_total_spend_without_outliers} we can see the Skewnes
     \end{tabular}
 
 
-    \caption{Skewness and Kurtosis results for total\_spend without outliers}
-    \label{tab:skew_kurt_total_spend_without_outliers}
+    \caption{Skewness and Kurtosis results for total\_spend without outliers}\label{tab:skew_kurt_total_spend_without_outliers}
 \end{table}
 
 \noindent Lower values of Skewness (0.44) and Kurtosis (2.70) after removing outliers indicate a more symmetrical distribution with lighter tails, suggesting that the outliers were contributing to the right skewness and heavier tails observed in the original distribution.
 
 \subsubsection{Kolmogorov-Smirnov test}
-In Table \ref{tab:ks_total_spend} we can see the K-S test results for total amount spent.
+In Table~\ref{tab:ks_total_spend} we can see the K-S test results for total amount spent.
 \begin{table}[H]
 
     \centering
@@ -465,14 +445,13 @@ In Table \ref{tab:ks_total_spend} we can see the K-S test results for total amou
         \hline
         Measure              & Obtained result    \\ \hline
         D (maximum distance) & 0.043939           \\ \hline
-        p-value              & $2.2\cdot10^{-16}$ \\ \hline
+        p-value              & \(2.2\cdot10^{-16}\) \\ \hline
     \end{tabular}
 
-    \caption{Kolmogorov-Smirnov test results for total\_spend}
-    \label{tab:ks_total_spend}
+    \caption{Kolmogorov-Smirnov test results for total\_spend}\label{tab:ks_total_spend}
 \end{table}
 
-\noindent Similarly to the version containing outliers, we decisively reject the null hypothesis $H_0$, confirming that the distribution of total spend is not normal.
+\noindent Similarly to the version containing outliers, we decisively reject the null hypothesis \(H_0\), confirming that the distribution of total spend is not normal.
 
 \subsubsection{Conclusion on outliers' impact on normality}
 \noindent Normality tests were repeated after removing the outliers, and the results still indicated a deviation from normality, albeit less pronounced. This suggests that while outliers contribute to the non-normality of \texttt{total\_spend}, there are underlying distributional characteristics that also deviate from normality.
@@ -496,9 +475,9 @@ Table~\ref{tab:ks_small_groups_comparison} summarizes the Kolmogorov-Smirnov (K-
 \begin{table}[h]
     \centering
     \begin{tabular}{l|c|c|l}
-        \textbf{Order Type} & \textbf{K-S Statistic ($D$)} & \textbf{$p$-value} & \textbf{Result ($\alpha=0.05$)} \\ \hline
-        Single Espresso     & 0.062548                     & 0.44700            & Fail to Reject $H_0$ (Normal)   \\
-        Brewed Coffee       & 0.10084                      & 0.03949            & Reject $H_0$ (Non-Normal)       \\
+        \textbf{Order Type} & \textbf{K-S Statistic (\(D\))} & \textbf{\(p\)-value} & \textbf{Result (\(\alpha=0.05\))} \\ \hline
+        Single Espresso     & 0.062548                     & 0.44700            & Fail to Reject \(H_0\) (Normal)   \\
+        Brewed Coffee       & 0.10084                      & 0.03949            & Reject \(H_0\) (Non-Normal)       \\
     \end{tabular}
     \caption{Normality testing results for specific product categories.}
     \label{tab:ks_small_groups_comparison}
@@ -508,20 +487,18 @@ Table~\ref{tab:ks_small_groups_comparison} summarizes the Kolmogorov-Smirnov (K-
 
 
 
-\noindent To better visualize the normality, figures \ref{fig:brewed_coffee_dist} and \ref{fig:espresso_dist} show the graphical representation of the data.
+\noindent To better visualize the normality, figures~\ref{fig:brewed_coffee_dist} and~\ref{fig:espresso_dist} show the graphical representation of the data.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/normality_standard_brewed_coffee.pdf}
-    \caption{Histogram and Q-Q plot showing the distribution of the fulfillment time of brewed coffee orders}
-    \label{fig:brewed_coffee_dist}
+    \caption{Histogram and Q-Q plot showing the distribution of the fulfillment time of brewed coffee orders}\label{fig:brewed_coffee_dist}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../Resources/Charts/Normality_testing/normality_standard_espresso.pdf}
-    \caption{Histogram and Q-Q plot showing the data distribution of fulfillment time of espresso orders}
-    \label{fig:espresso_dist}
+    \caption{Histogram and Q-Q plot showing the data distribution of fulfillment time of espresso orders}\label{fig:espresso_dist}
 \end{figure}
 
 \noindent Although the brewed coffee category didn't officially pass the test with p-value equal to 0.039, we can observe a slight normality.
@@ -537,7 +514,7 @@ This dataset contains operational metrics from multiple restaurants distributed 
     \begin{tabular}{c|c|c}
         \textbf{D-value} & \textbf{P-value} & \textbf{Result}               \\
         \hline
-        D = 0.021831     & p-value = 0.971  & Fail to reject $H_0$ (Normal) \\
+        D = 0.021831     & p-value = 0.971  & Fail to reject \(H_0\) (Normal) \\
     \end{tabular}
 \end{table}
 
@@ -557,13 +534,13 @@ This dataset contains operational metrics from multiple restaurants distributed 
 Firstly, we wanted to investigate whether a relationship exists between a customer's age group and their tendency to customize orders.
 \subsection{Formulation of the Hypothesis}
 \begin{itemize}
-    \item $H_0$: The distribution of the number of customizations is identical across all customer age groups.
-    \item $H_1$: At least one customer age group differs significantly from the others in their number of customizations.
+    \item \(H_0\): The distribution of the number of customizations is identical across all customer age groups.
+    \item \(H_1\): At least one customer age group differs significantly from the others in their number of customizations.
 \end{itemize}
 \subsection{Methodology}
-To determine if drink customization habits vary by demographic, we analyzed the relationship between the \texttt{customer\_age\_group} and \texttt{num\_customizations} attributes. Because the number of customizations is a discrete numerical variable with a heavily right-skewed distribution, we utilized the non-parametric Kruskal-Wallis H test. A standard significance level of $\alpha = 0.05$ was applied.
+To determine if drink customization habits vary by demographic, we analyzed the relationship between the \texttt{customer\_age\_group} and \texttt{num\_customizations} attributes. Because the number of customizations is a discrete numerical variable with a heavily right-skewed distribution, we utilized the non-parametric Kruskal-Wallis H test. A standard significance level of \(\alpha = 0.05\) was applied.
 \subsection{Results}
-A Kruskal-Wallis H test was conducted to determine if there were differences in the number of drink customizations between five customer age groups: 18-24, 25-34, 35-44, 45-54, and 55+. The test revealed a statistically significant difference in customization patterns across the age demographics ($\chi^2 = 1338.6$, $p < 0.001$). Therefore, we reject the null hypothesis ($H_0$).
+A Kruskal-Wallis H test was conducted to determine if there were differences in the number of drink customizations between five customer age groups: 18-24, 25-34, 35-44, 45-54, and 55+. The test revealed a statistically significant difference in customization patterns across the age demographics (\(\chi^2 = 1338.6\), \(p < 0.001\)). Therefore, we reject the null hypothesis (\(H_0\)).
 
 \begin{table}[H]
     \centering
@@ -573,40 +550,38 @@ A Kruskal-Wallis H test was conducted to determine if there were differences in 
         \textbf{Age Group} & \textbf{18-24} & \textbf{25-34} & \textbf{35-44} & \textbf{45-54} \\
         \hline
         \textbf{25-34}     & 0.84           & --             & --             & --             \\
-        \textbf{35-44}     & $<0.001$       & $<0.001$       & --             & --             \\
-        \textbf{45-54}     & $<0.001$       & $<0.001$       & 0.41           & --             \\
-        \textbf{55+}       & $<0.001$       & $<0.001$       & $<0.001$       & $<0.001$       \\
+        \textbf{35-44}     & \(<0.001\)       & \(<0.001\)       & --             & --             \\
+        \textbf{45-54}     & \(<0.001\)       & \(<0.001\)       & 0.41           & --             \\
+        \textbf{55+}       & \(<0.001\)       & \(<0.001\)       & \(<0.001\)       & \(<0.001\)       \\
         \hline
     \end{tabular}
-    \caption{Post-hoc pairwise Wilcoxon rank sum test $p$-values (Bonferroni corrected)}
-    \label{tab:posthoc_customizations}
+    \caption{Post-hoc pairwise Wilcoxon rank sum test \(p\)-values (Bonferroni corrected)}\label{tab:posthoc_customizations}
 \end{table}
 
-\noindent To identify exactly which groups differed, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table \ref{tab:posthoc_customizations}, indicated that customization habits are clustered into distinct generational behaviors. There was no statistically significant difference in the number of customizations between the 18-24 and 25-34 age groups ($p = 0.84$), nor between the 35-44 and 45-54 age groups ($p = 0.41$). However, differences between all other age group combinations were highly significant ($p < 0.001$). The visual representation of these differences is provided in Figure \ref{fig:age_customizations}. The boxplot highlights a clear generational divide: while younger customers (18-34) frequently request multiple customizations, the median number of modifications decreases significantly for groups aged 35 and above. This visualization confirms that customization is a defining characteristic of the ordering patterns for younger demographics.
+\noindent To identify exactly which groups differed, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table~\ref{tab:posthoc_customizations}, indicated that customization habits are clustered into distinct generational behaviors. There was no statistically significant difference in the number of customizations between the 18-24 and 25-34 age groups (\(p = 0.84\)), nor between the 35-44 and 45-54 age groups (\(p = 0.41\)). However, differences between all other age group combinations were highly significant (\(p < 0.001\)). The visual representation of these differences is provided in Figure~\ref{fig:age_customizations}. The boxplot highlights a clear generational divide: while younger customers (18-34) frequently request multiple customizations, the median number of modifications decreases significantly for groups aged 35 and above. This visualization confirms that customization is a defining characteristic of the ordering patterns for younger demographics.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{../Resources/Hypothesis_testing/Age_vs_Customizations_Plot.pdf}
-    \caption{Boxplot showing the distribution of order customizations by age group, illustrating higher customization frequency among younger customers.}
-    \label{fig:age_customizations}
+    \caption{Boxplot showing the distribution of order customizations by age group, illustrating higher customization frequency among younger customers.}\label{fig:age_customizations}
 \end{figure}
-Visual inspection of the boxplot suggests similarities between certain groups, such as the 35-44 and 55+ age groups, which appear to share identical interquartile ranges and medians. However, post-hoc pairwise Wilcoxon testing reveals a statistically significant difference between them ($p < 0.001$). This discrepancy highlights the limitations of boxplots when visualizing discrete numerical data; while the quartile thresholds (Q1, Median, Q3) align at whole numbers due to quantization, the underlying frequency distributions and mean ranks of the customizations differ significantly across the two populations.
+Visual inspection of the boxplot suggests similarities between certain groups, such as the 35-44 and 55+ age groups, which appear to share identical interquartile ranges and medians. However, post-hoc pairwise Wilcoxon testing reveals a statistically significant difference between them (\(p < 0.001\)). This discrepancy highlights the limitations of boxplots when visualizing discrete numerical data; while the quartile thresholds (Q1, Median, Q3) align at whole numbers due to quantization, the underlying frequency distributions and mean ranks of the customizations differ significantly across the two populations.
 \section{Analysis of customer satisfaction across order channels}
 Secondly, we wanted to investigate whether a relationship exists between the customer's chosen ordering method and their satisfaction ratings. This analysis is crucial to evaluate the effectiveness of digital channels in the Starbucks ecosystem.
 
 \subsection{Formulation of the Hypothesis}
 \begin{itemize}
-    \item $\mathbf{H_0}$: The distribution of customer satisfaction ratings is identical across all ordering channels.
-    \item $\mathbf{H_1}$: At least one ordering channel differs significantly from the others in terms of satisfaction ratings.
+    \item \(\mathbf{H_0}\): The distribution of customer satisfaction ratings is identical across all ordering channels.
+    \item \(\mathbf{H_1}\): At least one ordering channel differs significantly from the others in terms of satisfaction ratings.
 \end{itemize}
 
 \subsection{Methodology}
-To determine if satisfaction levels vary by ordering method, we analyzed the relationship between the \texttt{order\_channel} and \texttt{customer\_satisfaction} attributes. Because satisfaction is measured on a discrete ordinal scale (1-5) and the dataset exhibits non-normal distributions, we utilized the non-parametric \textbf{Kruskal-Wallis H test}. A standard significance level of $\alpha = 0.05$ was applied.
+To determine if satisfaction levels vary by ordering method, we analyzed the relationship between the \texttt{order\_channel} and \texttt{customer\_satisfaction} attributes. Because satisfaction is measured on a discrete ordinal scale (1-5) and the dataset exhibits non-normal distributions, we utilized the non-parametric \textbf{Kruskal-Wallis H test}. A standard significance level of \(\alpha = 0.05\) was applied.
 
 \subsection{Results}
-The Kruskal-Wallis test revealed a statistically significant difference in satisfaction ratings across the different channels ($\chi^2 = 2073.6$, $p < 0.001$). Therefore, we reject the null hypothesis ($\mathbf{H_0}$).
+The Kruskal-Wallis test revealed a statistically significant difference in satisfaction ratings across the different channels (\(\chi^2 = 2073.6\), \(p < 0.001\)). Therefore, we reject the null hypothesis (\(\mathbf{H_0}\)).
 
-To understand the specific differences between ordering methods, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table \ref{tab:posthoc_satisfaction}, show that all ordering channels differ significantly from one another in terms of customer satisfaction levels ($p < 0.001$).
+To understand the specific differences between ordering methods, a post-hoc pairwise Wilcoxon rank sum test with a Bonferroni correction was performed. The results, summarized in Table~\ref{tab:posthoc_satisfaction}, show that all ordering channels differ significantly from one another in terms of customer satisfaction levels (\(p < 0.001\)).
 
 \begin{table}[H]
     \centering
@@ -615,16 +590,15 @@ To understand the specific differences between ordering methods, a post-hoc pair
         \hline
         \textbf{Order Channel}    & \textbf{Drive-Thru} & \textbf{In-Store Cashier} & \textbf{Kiosk} \\
         \hline
-        \textbf{In-Store Cashier} & $<0.001$            & --                        & --             \\
-        \textbf{Kiosk}            & $<0.001$            & $<0.001$                  & --             \\
-        \textbf{Mobile App}       & $<0.001$            & $<0.001$                  & $<0.001$       \\
+        \textbf{In-Store Cashier} & \(<0.001\)            & --                        & --             \\
+        \textbf{Kiosk}            & \(<0.001\)            & \(<0.001\)                  & --             \\
+        \textbf{Mobile App}       & \(<0.001\)            & \(<0.001\)                  & \(<0.001\)       \\
         \hline
     \end{tabular}
-    \caption{Post-hoc pairwise Wilcoxon rank sum test $p$-values for satisfaction by channel (Bonferroni corrected)}
-    \label{tab:posthoc_satisfaction}
+    \caption{Post-hoc pairwise Wilcoxon rank sum test \(p\)-values for satisfaction by channel (Bonferroni corrected)}\label{tab:posthoc_satisfaction}
 \end{table}
 
-Table \ref{tab:satisfaction_stats} presents the descriptive statistics for customer satisfaction by ordering channel.
+Table~\ref{tab:satisfaction_stats} presents the descriptive statistics for customer satisfaction by ordering channel.
 
 \begin{table}[H]
     \centering
@@ -637,17 +611,15 @@ Table \ref{tab:satisfaction_stats} presents the descriptive statistics for custo
         Kiosk                  & 3.60                       & 4               & 1.07                    \\ \hline
         Drive-Thru             & 3.44                       & 4               & 1.29                    \\ \hline
     \end{tabular}
-    \caption{Descriptive statistics for customer satisfaction by channel}
-    \label{tab:satisfaction_stats}
+    \caption{Descriptive statistics for customer satisfaction by channel}\label{tab:satisfaction_stats}
 \end{table}
 
-As observed in Table \ref{tab:satisfaction_stats}, the \textbf{Mobile App} users demonstrate the highest levels of satisfaction, likely due to the convenience and personalized experience of the digital interface. Conversely, the \textbf{Drive-Thru} channel shows the lowest mean satisfaction and the highest standard deviation, suggesting a more inconsistent customer experience. These differences are visually compared in the boxplot in Figure \ref{fig:satisfaction_boxplot}, which illustrates the shift in satisfaction distributions across the four channels.
+As observed in Table~\ref{tab:satisfaction_stats}, the \textbf{Mobile App} users demonstrate the highest levels of satisfaction, likely due to the convenience and personalized experience of the digital interface. Conversely, the \textbf{Drive-Thru} channel shows the lowest mean satisfaction and the highest standard deviation, suggesting a more inconsistent customer experience. These differences are visually compared in the boxplot in Figure~\ref{fig:satisfaction_boxplot}, which illustrates the shift in satisfaction distributions across the four channels.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{../Resources/Charts/box-plots/satisfaction_channels_boxplot.pdf}
-    \caption{Distribution of satisfaction ratings across order channels, showing higher and more consistent satisfaction for digital and in-store channels compared to Drive-Thru.}
-    \label{fig:satisfaction_boxplot}
+    \caption{Distribution of satisfaction ratings across order channels, showing higher and more consistent satisfaction for digital and in-store channels compared to Drive-Thru.}\label{fig:satisfaction_boxplot}
 \end{figure}
 
 \noindent While Figure~\ref{fig:satisfaction_boxplot} suggests a visual similarity between the \textbf{In-Store Cashier} and \textbf{Mobile App} methods, the statistical test reveals a significant difference between their underlying distributions.
@@ -669,10 +641,10 @@ Starbucks offers a rewards program to incentivize customer loyalty. In this sect
 \end{table}
 
 \subsection{Formulation of the Hypothesis}
-We test the following hypotheses at a significance level of $\alpha = 0.05$:
+We test the following hypotheses at a significance level of \(\alpha = 0.05\):
 \begin{itemize}
-    \item $H_0$: The distribution of total spend is the same for both groups.
-    \item $H_1$: The distribution of total spend differs significantly between the two groups.
+    \item \(H_0\): The distribution of total spend is the same for both groups.
+    \item \(H_1\): The distribution of total spend differs significantly between the two groups.
 \end{itemize}
 
 \subsection{Methodology and Results}
@@ -680,12 +652,12 @@ To evaluate the statistical significance of the \$1.72 difference in medians, a 
 
 The test yielded the following results:
 \begin{itemize}
-    \item \textbf{Test Statistic ($W$):} 1033353000
-    \item \textbf{$p$-value:} $< 2.2e-16$
+    \item \textbf{Test Statistic (\(W\)):} 1033353000
+    \item \textbf{\(p\)-value:} \(< 2.2e-16\)
 \end{itemize}
 
 \subsection{Interpretation}
-Since the $p$-value is significantly lower than $\alpha = 0.05$, we reject the null hypothesis $H_0$. This provides strong evidence that the difference in spending patterns is statistically significant. The results confirm that members of the rewards program tend to have higher transaction values than non-members.
+Since the \(p\)-value is significantly lower than \(\alpha = 0.05\), we reject the null hypothesis \(H_0\). This provides strong evidence that the difference in spending patterns is statistically significant. The results confirm that members of the rewards program tend to have higher transaction values than non-members.
 
 
 \section{Impact of Drink Customization on Fulfillment Time}
@@ -693,92 +665,90 @@ To further explore operational efficiency, we analyzed whether the complexity of
 
 \subsection{Formulation of the Hypothesis}
 \begin{itemize}
-    \item $\mathbf{H_0}$: There is no correlation between the number of customizations and fulfillment time.
-    \item $\mathbf{H_1}$: There is a significant correlation between the number of customizations and fulfillment time.
+    \item \(\mathbf{H_0}\): There is no correlation between the number of customizations and fulfillment time.
+    \item \(\mathbf{H_1}\): There is a significant correlation between the number of customizations and fulfillment time.
 \end{itemize}
 
 \subsection{Methodology}
 The relationship was investigated using the \textbf{Spearman's Rank Correlation Coefficient}, which is appropriate for non-normally distributed data and discrete variables. We visualized the relationship by plotting the mean fulfillment time for each customization level with standard error bars to account for variability.
 
 \subsection{Results and Interpretation}
-As illustrated in Figure \ref{fig:customization_fulfillment_averages}, the mean fulfillment time remains remarkably stable across different levels of customization for both beverage types.
+As illustrated in Figure~\ref{fig:customization_fulfillment_averages}, the mean fulfillment time remains remarkably stable across different levels of customization for both beverage types.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{../Resources/Hypothesis_testing/Customization_vs_Fulfillment_Averages.pdf}
-    \caption{Mean fulfillment time vs. number of customizations for Espresso and Brewed Coffee}
-    \label{fig:customization_fulfillment_averages}
+    \caption{Mean fulfillment time vs.\ number of customizations for Espresso and Brewed Coffee}\label{fig:customization_fulfillment_averages}
 \end{figure}
 
 The statistical analysis confirmed this visual observation:
 \begin{itemize}
-    \item \textbf{Single Espresso}: $\rho = 0.023$, $p = 0.497$
-    \item \textbf{Single Brewed Coffee}: $\rho = -0.041$, $p = 0.233$
+    \item \textbf{Single Espresso}: \(\rho = 0.023\), \(p = 0.497\)
+    \item \textbf{Single Brewed Coffee}: \(\rho = -0.041\), \(p = 0.233\)
 \end{itemize}
 
-In both cases, the $p$-values are significantly higher than the threshold of 0.05, meaning we \textbf{fail to reject the null hypothesis}. This suggests that for these standardized beverage types, the number of customizations (such as extra shots or syrup) does not significantly impede the fulfillment process. This reflects high operational efficiency and standardization in the drink preparation workflow.
+In both cases, the \(p\)-values are significantly higher than the threshold of 0.05, meaning we \textbf{fail to reject the null hypothesis}. This suggests that for these standardized beverage types, the number of customizations (such as extra shots or syrup) does not significantly impede the fulfillment process. This reflects high operational efficiency and standardization in the drink preparation workflow.
 
 \section{The correlation between Satisfaction and Fulfillment Time}
 
 \subsection{Formulation of the Hypothesis}
-Following the preliminary claim from Section 1.1 that customer satisfaction correlates with fulfillment time, we performed a statistical test to evaluate the strength of this relationship. We establish the following hypotheses at a significance level of $\alpha = 0.05$:
+Following the preliminary claim from Section 1.1 that customer satisfaction correlates with fulfillment time, we performed a statistical test to evaluate the strength of this relationship. We establish the following hypotheses at a significance level of \(\alpha = 0.05\):
 \begin{itemize}
-    \item $H_0$: There is no monotonic relationship between fulfillment time and customer satisfaction ($\rho = 0$).
-    \item $H_1$: There is a statistically significant monotonic relationship between fulfillment time and customer satisfaction ($\rho \neq 0$).
+    \item \(H_0\): There is no monotonic relationship between fulfillment time and customer satisfaction (\(\rho = 0\)).
+    \item \(H_1\): There is a statistically significant monotonic relationship between fulfillment time and customer satisfaction (\(\rho \neq 0\)).
 \end{itemize}
 
 \subsection{Methodology}
 Given that customer satisfaction is serial data (measured on a discrete 1 to 5 scale), a Spearman's rank correlation test was utilized. Fulfillment time was measured continuously in minutes.
 
 \subsection{Results and Interpretation}
-To visualize the relationship, fulfillment times were categorized into 2-minute bins, and the average satisfaction was plotted for each bin (Figure \ref{fig:satisfaction_vs_fulfillment}).
+To visualize the relationship, fulfillment times were categorized into 2-minute bins, and the average satisfaction was plotted for each bin (Figure~\ref{fig:satisfaction_vs_fulfillment}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{../Resources/Hypothesis_testing/satisfaction_vs_fulfillment.pdf}
-    \caption{Average customer satisfaction across different fulfillment time bins.}
-    \label{fig:satisfaction_vs_fulfillment}
+    \caption{Average customer satisfaction across different fulfillment time bins.}\label{fig:satisfaction_vs_fulfillment}
 \end{figure}
 
 The statistical test yielded the following results:
 \begin{itemize}
-    \item \textbf{Spearman's $\rho$ Estimate:} \textit{-0.03311538}
-    \item \textbf{$p$-value:} \textit{2.2e-16}
+    \item \textbf{Spearman's \(\rho\) Estimate:} \textit{-0.03311538}
+    \item \textbf{\(p\)-value:} \textit{2.2e-16}
 \end{itemize}
 
 
-Since the $p$-value is significantly lower than $\alpha = 0.05$, we reject the null hypothesis $H_0$. The test confirms a statistically significant negative correlation between fulfillment time and customer satisfaction. The downward trend displayed in Figure \ref{fig:satisfaction_vs_fulfillment} visually supports this, illustrating that as customer wait times increase, average satisfaction scores steadily decline. Consequently, operational improvements focused on minimizing wait times should be heavily prioritized to maintain high customer satisfaction.
+Since the \(p\)-value is significantly lower than \(\alpha = 0.05\), we reject the null hypothesis \(H_0\). The test confirms a statistically significant negative correlation between fulfillment time and customer satisfaction. The downward trend displayed in Figure~\ref{fig:satisfaction_vs_fulfillment} visually supports this, illustrating that as customer wait times increase, average satisfaction scores steadily decline. Consequently, operational improvements focused on minimizing wait times should be heavily prioritized to maintain high customer satisfaction.
 
 
 \chapter{Multiple Linear Regression: Predicting Fulfillment Time}
 This chapter transitions from basic hypothesis testing to predictive statistical modeling by applying Multiple Linear Regression to the dataset.
-We wanted to see how different variables $($specifically order complexity and ordering channels$)$ interact to impact overall order fulfillment time.
+We wanted to see how different variables \((\)specifically order complexity and ordering channels\()\) interact to impact overall order fulfillment time.
 \section{Introduction}
 To introduce an advanced statistical modeling technique, a multiple linear regression model was developed to predict the time required to complete an order (\texttt{fulfillment\_time\_min}). The independent variables selected for this model include the number of customizations (\texttt{num\_customizations}), the total number of items in the order (\texttt{cart\_size}), and the ordering method (\texttt{order\_channel}).
 
 \section{Methodology}
 The theoretical model is expressed by the following equation:
-$$ FT = \beta_0 + \beta_1(NC) + \beta_2(CS) + \sum \beta_k(OC_k) + \epsilon $$
+\[ FT = \beta_0 + \beta_1(NC) + \beta_2(CS) + \sum \beta_k(OC_k) + \epsilon \]
 Where:
 \begin{itemize}
-    \item $FT$ = \texttt{fulfillment\_time\_min}
-    \item $NC$ = \texttt{num\_customizations}
-    \item $CS$ = \texttt{cart\_size}
-    \item $OC$ = \texttt{order\_channel}
+    \item \(FT\) = \texttt{fulfillment\_time\_min}
+    \item \(NC\) = \texttt{num\_customizations}
+    \item \(CS\) = \texttt{cart\_size}
+    \item \(OC\) = \texttt{order\_channel}
 \end{itemize}
 Since \texttt{order\_channel} is a categorical variable, it was encoded as dummy variables within the model. The standard assumptions of linear regression were verified using diagnostic residual plots.
 \section{Results and Interpretation}
-The multiple linear regression model yielded an Adjusted R-squared value of 0.3587, indicating that approximately 35.87\% of the variance in fulfillment time can be explained by these predictors. The overall model was statistically significant ($p < 0.001$). However, the low value of $R^2$ suggests that a large portion of the variance in fulfillment time is driven by external factors not included in this model (e.g., time of day, staffing levels, or specific store traffic).
+The multiple linear regression model yielded an Adjusted R-squared value of 0.3587, indicating that approximately 35.87\% of the variance in fulfillment time can be explained by these predictors. The overall model was statistically significant (\(p < 0.001\)). However, the low value of \(R^2\) suggests that a large portion of the variance in fulfillment time is driven by external factors not included in this model (e.g., time of day, staffing levels, or specific store traffic).
 
-Based on the analysis, the following empirical regression formula was obtained to predict Fulfillment Time ($FT$):
+Based on the analysis, the following empirical regression formula was obtained to predict Fulfillment Time (\(FT\)):
 
 \[
     FT = 5.81 - 0.002(NC) - 0.001(CS) - 2.60(\text{InStore}) - 1.79(\text{Kiosk}) - 1.29(\text{MobileApp})
 \]
 
-In this equation, the baseline expected wait time, represented by the intercept (the Drive-Thru channel), is 5.81 minutes. The obtained parameters for the number of customizations ($NC$) and cart size ($CS$) are practically zero ($-0.002$ and $-0.001$, respectively). Consequently, neither the number of customizations ($p=0.495$) nor the cart size ($p=0.524$) are statistically significant predictors of fulfillment time. This suggests that order complexity does not create meaningful operational bottlenecks.
+In this equation, the baseline expected wait time, represented by the intercept (the Drive-Thru channel), is 5.81 minutes. The obtained parameters for the number of customizations (\(NC\)) and cart size (\(CS\)) are practically zero (\(-0.002\) and \(-0.001\), respectively). Consequently, neither the number of customizations (\(p=0.495\)) nor the cart size (\(p=0.524\)) are statistically significant predictors of fulfillment time. This suggests that order complexity does not create meaningful operational bottlenecks.
 
-Instead, the ordering method (order\_channel) is the primary driver of fulfillment time. The formula demonstrates that all other channels are significantly faster ($p < 0.001$) than the baseline: placing an order via the In-Store Cashier reduces the expected wait time by 2.60 minutes, using a Kiosk reduces it by 1.79 minutes, and using the Mobile App reduces it by 1.29 minutes compared to the Drive-Thru.
+Instead, the ordering method (order\_channel) is the primary driver of fulfillment time. The formula demonstrates that all other channels are significantly faster (\(p < 0.001\)) than the baseline: placing an order via the In-Store Cashier reduces the expected wait time by 2.60 minutes, using a Kiosk reduces it by 1.79 minutes, and using the Mobile App reduces it by 1.29 minutes compared to the Drive-Thru.
 
 Finally, \textbf{Figure 6.1} presents the diagnostic plots used to verify the assumptions of the multiple linear regression model.
 \begin{itemize}
@@ -791,8 +761,7 @@ Finally, \textbf{Figure 6.1} presents the diagnostic plots used to verify the as
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{../Resources/Charts/Hypothesis_testing/Regression_Diagnostics.pdf}
-    \caption{Diagnostic residual plots verifying the assumptions of the multiple linear regression model}
-    \label{fig:regression_diagnostics}
+    \caption{Diagnostic residual plots verifying the assumptions of the multiple linear regression model}\label{fig:regression_diagnostics}
 \end{figure}
 
 \chapter{Results and conclusions}
